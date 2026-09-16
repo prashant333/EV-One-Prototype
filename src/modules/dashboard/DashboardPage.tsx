@@ -725,7 +725,7 @@ function DiagnosticsManifest({ vehicles }: { vehicles: Vehicle[] }) {
 // --- Page --------------------------------------------------------------------
 
 export function DashboardPage() {
-  const { segmentId, segment, role, visibleModules } = useWorkspace()
+  const { segmentId, role, visibleModules } = useWorkspace()
   const copy = SEGMENT_COPY[segmentId]
 
   // PRD: "This access can be given per asset as well."
@@ -754,20 +754,16 @@ export function DashboardPage() {
         }
       />
 
-      {/* The segment's primary business question, straight from the PRD. */}
-      <div className="mb-space-md flex flex-wrap items-center gap-space-sm rounded-xl border border-primary-fixed-dim bg-primary-fixed/40 px-space-md py-space-sm">
-        <Icon name="help" className="text-[18px] text-primary" />
-        <span className="font-label-sm text-label-sm uppercase tracking-wider text-primary">
-          {segment.name} · Primary business question
-        </span>
-        <span className="font-body-sm text-body-sm text-on-surface">{segment.businessQuestion}</span>
-        {role.assetScope.kind === 'hubs' && (
-          <StatusBadge tone="warn" className="ml-auto">
+      {/* Shown only for hub-restricted roles, so a short vehicle list reads as
+          a permission boundary rather than missing data. */}
+      {role.assetScope.kind === 'hubs' && (
+        <div className="mb-space-md flex justify-end">
+          <StatusBadge tone="warn">
             <Icon name="lock" className="text-[12px]" />
             Scoped to {role.assetScope.hubs?.join(', ')}
           </StatusBadge>
-        )}
-      </div>
+        </div>
+      )}
 
       <KpiStrip />
 

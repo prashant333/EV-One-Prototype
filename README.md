@@ -48,6 +48,8 @@ src/
     roles.ts       RBAC: per-module View/Edit + per-asset scoping
     fleet.ts       Vehicles, drivers, trips, hubs, alerts, chart series
     health.ts      Health KPIs, FOTA rollout, per-vehicle detail records
+    charging.ts    Depots, charging sessions, depot power curve, port mix
+    driverAnalytics.ts  Per-driver scorecards, coaching queue, tier bands
     kpis.ts        16-metric catalogue + per-segment defaults
   state/
     WorkspaceContext.tsx   Active segment + role; derives visible modules
@@ -72,6 +74,8 @@ Two rules keep the prototype honest:
 | Dashboard | Built to the delivered design |
 | Schedule and Trips | Built to the delivered design |
 | Vehicles and Health | Built to the delivered design (roster + detail, 5 tabs) |
+| Charging Sessions | Built to the delivered design (+ inspector sheet, remote-charge modal) |
+| Driver Analytics | Built to the delivered design (roster + selected-driver panel) |
 | Organization & Settings | Built (RBAC matrices) |
 | All other Cluster 1 modules | Routable stubs marked *Design Pending* |
 
@@ -83,6 +87,12 @@ Assignment & Score, and Maintenance & Service.
 
 Its "Digital Twin Snapshot" is a drawn SVG rather than the photo in the design
 file: the source was a generated `googleusercontent` asset that would expire.
+The same applies to the bay-rotation card on Charging Sessions.
+
+**Hubs vs Depots.** A Hub is an operational base — geofence, dispatch, driver
+roster. A Depot is charging infrastructure sited at one. The four hubs
+(Koramangala, Peenya Corridor, Airport Arterial, Whitefield Ring) are unchanged;
+`charging.ts` adds four depots on top of them.
 
 Stubs are deliberate. Route, nav entry, segment gating and permission state are
 already wired for every module; only the visual design is pending. As each design

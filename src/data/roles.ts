@@ -72,7 +72,9 @@ export const ROLES: Role[] = [
       maintenance: 'edit',
       geofences: 'edit',
       'routes-corridors': 'edit',
-      'charging-sessions': 'view',
+      // Authorising a remote charge and setting tariff rules are day-to-day
+      // fleet operations, so this role edits rather than only views.
+      'charging-sessions': 'edit',
       'driver-analytics': 'edit',
       'vehicle-telemetry': 'view',
       fota: 'view',

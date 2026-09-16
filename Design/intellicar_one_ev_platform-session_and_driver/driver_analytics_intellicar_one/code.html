@@ -1,0 +1,824 @@
+<!DOCTYPE html><html lang="en" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-dim":"#d2d9f4","error-container":"#ffdad6","inverse-on-surface":"#eef0ff","surface-container-low":"#f2f3ff","primary":"#0037b0","primary-container":"#1d4ed8","on-tertiary-container":"#76eab6","primary-fixed-dim":"#b7c4ff","on-error":"#ffffff","tertiary-container":"#006948","on-tertiary-fixed-variant":"#005137","primary-fixed":"#dce1ff","surface-variant":"#dae2fd","inverse-surface":"#283044","on-secondary":"#ffffff","on-secondary-container":"#fffbff","surface-container":"#eaedff","on-tertiary-fixed":"#002114","tertiary":"#004f35","outline-variant":"#c4c5d7","secondary-fixed":"#e2dfff","on-primary-fixed":"#001551","on-primary":"#ffffff","on-tertiary":"#ffffff","surface-container-highest":"#dae2fd","surface-bright":"#faf8ff","on-surface-variant":"#434655","on-surface":"#131b2e","background":"#faf8ff","surface-container-lowest":"#ffffff","on-primary-fixed-variant":"#0039b5","secondary":"#4b41e1","secondary-fixed-dim":"#c3c0ff","on-secondary-fixed-variant":"#3323cc","on-secondary-fixed":"#0f0069","tertiary-fixed-dim":"#68dba9","inverse-primary":"#b7c4ff","tertiary-fixed":"#85f8c4","on-primary-container":"#cad3ff","secondary-container":"#645efb","on-background":"#131b2e","outline":"#747686","surface":"#faf8ff","error":"#ba1a1a","on-error-container":"#93000a","surface-tint":"#2151da","surface-container-high":"#e2e7ff"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-xl":"1.5rem","margin":"1rem","space-sm":"0.5rem","space-xs":"0.25rem","space-md":"0.75rem","space-2xs":"0.125rem","margin-desktop":"1.5rem","gutter-desktop":"1.5rem","gutter":"1rem","space-2xl":"2rem","space-lg":"1rem"},"fontFamily":{"telemetry-sm":["JetBrains Mono"],"body-lg":["Inter"],"label-sm":["Inter"],"body-md":["Inter"],"telemetry-md":["JetBrains Mono"],"headline-sm":["Inter"],"headline-md":["Inter"],"body-sm":["Inter"],"headline-xl-mobile":["Inter"],"headline-lg":["Inter"],"telemetry-lg":["JetBrains Mono"],"headline-xl":["Inter"],"label-md":["Inter"]},"fontSize":{"telemetry-sm":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0em","fontWeight":"500"}],"body-lg":["1rem",{"lineHeight":"1.5rem","letterSpacing":"0em","fontWeight":"400"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.05em","fontWeight":"600"}],"body-md":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0em","fontWeight":"400"}],"telemetry-md":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"-0.01em","fontWeight":"500"}],"headline-sm":["1rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-md":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0em","fontWeight":"400"}],"headline-xl-mobile":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}],"telemetry-lg":["1.5rem",{"lineHeight":"1.75rem","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-xl":["2rem",{"lineHeight":"2.5rem","letterSpacing":"-0.025em","fontWeight":"700"}],"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.025em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 bg-surface-container-lowest z-40 flex items-center justify-between px-space-md border-b border-outline-variant/30 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center gap-space-sm"><img alt="Intellicar One Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WQLuILNnMpHUxZn_K5NJPnaBXV58WX8qHGhFqIGAhBzANlVV1HK25pPUNQ5kAr42CUM_s-OGmn4PiE1jVXSdtybOlk_vf8Npwur9za3wc_v3UE-TjJXOrEsXHRRsLWlFKJQXY6WlG_RSAL_DUkUwFLpYv3BEqInavC8rxurIxfArXf9A8aDMzT2F5SBBSZkcHC9hj9DllRoisaC9UtqpkGYH0qSQpmkoaXXuw5UqnO9XpHt_OTxoVxjbv6"><div class="flex flex-col leading-none"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-bold">INTELLICAR<span class="text-primary font-bold ml-1">ONE</span></span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Enterprise Telemetry</span></div></div><div class="h-6 w-px bg-outline-variant/50 mx-space-2xs"></div><div class="relative group"><button class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors text-left" type="button"><div class="w-2 h-2 rounded-full bg-primary"></div><div class="flex flex-col leading-tight"><span class="font-label-sm text-label-sm font-semibold uppercase text-primary tracking-wider">Workspace</span><span class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1">Fleet &amp; Mobility<span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span></span></div></button></div></div><div class="flex items-center gap-space-sm flex-1 max-w-4xl mx-space-md"><div class="flex items-center bg-surface-container-low px-space-sm py-1 rounded-lg border border-outline-variant/40 gap-space-xs text-on-surface-variant font-body-sm text-body-sm shrink-0"><div class="flex items-center gap-1 cursor-pointer hover:text-on-surface"></div><div class="h-3 w-px bg-outline-variant/60"></div><div class="flex items-center gap-1 cursor-pointer hover:text-on-surface"><span class="font-label-sm text-label-sm uppercase font-semibold text-outline">Reg:</span><span class="">Bengaluru Hub</span><span class="material-symbols-outlined text-[14px]">arrow_drop_down</span></div><div class="h-3 w-px bg-outline-variant/60"></div><div class="flex items-center gap-1 cursor-pointer hover:text-on-surface"><span class="font-label-sm text-label-sm uppercase font-semibold text-outline">Site:</span><span class="">All Sites</span><span class="material-symbols-outlined text-[14px]">arrow_drop_down</span></div><div class="h-3 w-px bg-outline-variant/60"></div><div class="flex items-center gap-1 cursor-pointer hover:text-on-surface"><span class="font-label-sm text-label-sm uppercase font-semibold text-outline">Time:</span><span class="font-telemetry-sm text-telemetry-sm text-primary font-medium">24h</span><span class="material-symbols-outlined text-[14px]">arrow_drop_down</span></div></div><div class="relative flex-1 min-w-[240px]"><span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full h-9 pl-9 pr-12 rounded-lg bg-surface-container-low border border-outline-variant/40 text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="Search vehicle ID, battery ID, VIN, driver (e.g. VH-8021)..." type="text"><kbd class="absolute right-space-sm top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded bg-surface-container border border-outline-variant/60 font-telemetry-sm text-telemetry-sm text-on-surface-variant">⌘K</kbd></div></div><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center gap-space-xs"><button aria-label="Alerts" class="relative p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 flex items-center justify-center min-w-[16px] h-4 px-1 rounded-full bg-error text-on-error font-telemetry-sm text-[10px] font-bold">18</span></button><button aria-label="Documentation" class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">help</span></button></div><div class="h-6 w-px bg-outline-variant/50"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden 2xl:flex flex-col leading-tight"><span class="font-body-sm text-body-sm font-semibold text-on-surface">ABC Mobility Team</span><span class="font-label-sm text-label-sm text-on-surface-variant">Operations Lead</span></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-lowest border-r border-outline-variant/30 z-30 flex flex-col justify-between overflow-y-auto"><div class="py-space-md flex flex-col gap-space-lg"><div class="px-space-md"><div class="flex items-center justify-between px-space-sm py-1.5 mb-space-xs rounded bg-surface-container-high/60"><span class="text-primary font-label-sm text-label-sm uppercase font-bold tracking-wider">Workspace: Fleet &amp; Mobility</span><span class="w-1.5 h-1.5 rounded-full bg-primary"></span></div><nav class="space-y-1" data-active-classes="bg-primary text-on-primary font-semibold"><a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="fleet-dashboard" href="#">Fleet Dashboard</a><a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="vehicles-and-trips" href="#">Vehicles &amp; Trips</a><a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="vehicle-health-and-telemetry" href="#">Vehicle Health &amp; Telemetry</a><a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="charging-sessions" href="#">Charging Sessions</a><a aria-current="page" class="block px-space-sm py-2 rounded-lg transition-colors bg-primary text-on-primary font-semibold" data-path="driver-analytics" href="#">Driver Analytics</a><a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="maintenance-and-work-orders" href="#">Maintenance &amp; Work Orders</a></nav></div><div class="px-space-md"><div class="px-space-sm py-1.5 mb-space-xs rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase font-bold tracking-wider">Platform &amp; Operations</div><nav class="space-y-1" data-active-classes="bg-primary text-on-primary font-semibold"><a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="live-operations-map" href="#">Live Operations Map</a><a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="operational-alerts" href="#">Operational Alerts</a><a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="incident-management" href="#">Incident Management</a><a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="reports-and-analytics" href="#">Reports &amp; Analytics</a></nav></div></div><div class="p-space-md border-t border-outline-variant/30 flex flex-col gap-space-xs bg-surface-container-low/50"><div class="flex items-center justify-between p-2 rounded bg-surface-container-lowest border border-outline-variant/40"><div class="flex items-center gap-2 overflow-hidden"><span class="material-symbols-outlined text-primary text-[18px]">verified</span><div class="flex flex-col truncate"><span class="font-body-sm text-body-sm font-semibold truncate text-on-surface">ABC Mobility</span><span class="font-label-sm text-label-sm text-primary font-bold uppercase">Pro Tier</span></div></div><span class="material-symbols-outlined text-on-surface-variant text-[16px]">unfold_more</span></div><div class="flex items-center justify-between pt-space-xs"><button class="flex items-center gap-1.5 text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">contact_support</span><span class="">Support</span></button><button aria-label="Collapse sidebar" class="p-1 text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">keyboard_double_arrow_left</span></button></div></div></aside><div class="pl-64"><main class="w-full pt-16 bg-surface min-h-screen px-space-md"><div class="flex flex-col w-full pb-space-2xl gap-space-lg">
+<!-- Top Operational Breadcrumb & Telemetry Status Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md py-space-sm">
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex items-center gap-2 font-label-sm text-label-sm uppercase tracking-wider text-outline">
+<span class="">Workspaces</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="">Fleet &amp; Mobility</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-bold">Driver Analytics</span>
+</div>
+<div class="flex items-center gap-space-md flex-wrap mt-0.5">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Driver Analytics</h1>
+
+</div>
+</div>
+<!-- Global Operational Action Hub -->
+<div class="flex items-center gap-space-sm flex-wrap shrink-0">
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-semibold shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">download</span>
+<span class="">Download Scorecards</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-semibold shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">tune</span>
+<span class="">Incentive &amp; Bonus Tiers</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-sm text-body-sm font-semibold shadow-md transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">campaign</span>
+<span class="">Dispatch Safety Notice</span>
+</button>
+</div>
+</div>
+<!-- Operational Metrics Micro-Ribbon -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md p-space-md rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[22px]">badge</span>
+</div>
+<div class="flex flex-col leading-tight">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Roster Allocation</span>
+<div class="flex items-baseline gap-2">
+<span class="font-telemetry-lg text-telemetry-lg font-bold text-on-surface">1,420</span>
+<span class="font-body-sm text-body-sm text-tertiary font-semibold flex items-center">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span> 98.4% On-Duty
+          </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary text-[22px]">verified_user</span>
+</div>
+<div class="flex flex-col leading-tight">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Fleet Safety Composite</span>
+<div class="flex items-baseline gap-2">
+<span class="font-telemetry-lg text-telemetry-lg font-bold text-on-surface">92<span class="text-outline font-normal text-headline-sm">/100</span></span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed-dim/30 text-on-tertiary-fixed-variant font-label-sm text-label-sm font-bold">SUPERIOR</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[22px]">bolt</span>
+</div>
+<div class="flex flex-col leading-tight">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Fleet Eco-Efficiency</span>
+<div class="flex items-baseline gap-2">
+<span class="font-telemetry-lg text-telemetry-lg font-bold text-on-surface">94.2 <span class="text-body-sm font-normal text-outline">Wh/km</span></span>
+<span class="font-body-sm text-body-sm text-tertiary font-semibold">-4.1% vs Target</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Top Driver KPI & Telemetry Array -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md">
+<!-- Card 1: Star Rating -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="flex items-start justify-between">
+<span class="font-label-sm text-label-sm font-bold uppercase text-outline">Fleet Driver Rating</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">grade</span>
+</div>
+<div class="my-space-sm flex flex-col">
+<div class="flex items-baseline gap-2">
+<span class="font-telemetry-lg text-telemetry-lg font-bold text-on-surface">4.82</span>
+<span class="font-body-sm text-body-sm text-outline">/ 5.00</span>
+</div>
+<div class="flex items-center gap-1 mt-1 text-primary">
+<span class="material-symbols-outlined text-[16px] text-amber-500 fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px] text-amber-500 fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px] text-amber-500 fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px] text-amber-500 fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px] text-amber-500 fill-1" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">★ Top 5% Commercial EV Fleets</span>
+</div>
+<!-- Card 2: Harsh Braking -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<span class="font-label-sm text-label-sm font-bold uppercase text-outline">Harsh Braking</span>
+<span class="material-symbols-outlined text-error text-[18px]">do_not_disturb_on</span>
+</div>
+<div class="my-space-sm flex flex-col">
+<div class="flex items-baseline gap-1">
+<span class="font-telemetry-lg text-telemetry-lg font-bold text-on-surface">0.42</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">/100km</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 24%"></div>
+</div>
+</div>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-tertiary font-semibold">
+<span class="material-symbols-outlined text-[14px]">trending_down</span>
+<span class="">-28% MoM improvement</span>
+</div>
+</div>
+<!-- Card 3: Harsh Acceleration -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<span class="font-label-sm text-label-sm font-bold uppercase text-outline">Harsh Accel</span>
+<span class="material-symbols-outlined text-amber-600 text-[18px]">speed</span>
+</div>
+<div class="my-space-sm flex flex-col">
+<div class="flex items-baseline gap-1">
+<span class="font-telemetry-lg text-telemetry-lg font-bold text-on-surface">0.38</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">/100km</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 19%"></div>
+</div>
+</div>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">horizontal_rule</span>
+<span class="">Within 0.40 SLA Threshold</span>
+</div>
+</div>
+<!-- Card 4: Regen Braking Energy -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<span class="font-label-sm text-label-sm font-bold uppercase text-outline">Regen Energy Yield</span>
+<span class="material-symbols-outlined text-tertiary text-[18px]">energy_savings_leaf</span>
+</div>
+<div class="my-space-sm flex flex-col">
+<div class="flex items-baseline gap-1">
+<span class="font-telemetry-lg text-telemetry-lg font-bold text-tertiary">18.4%</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">recovered</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 68%"></div>
+</div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">+2.1 kWh/shift per vehicle</span>
+</div>
+<!-- Card 5: Excessive Idling -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<span class="font-label-sm text-label-sm font-bold uppercase text-outline">Excessive Idling</span>
+<span class="material-symbols-outlined text-outline text-[18px]">timer_pause</span>
+</div>
+<div class="my-space-sm flex flex-col">
+<div class="flex items-baseline gap-1">
+<span class="font-telemetry-lg text-telemetry-lg font-bold text-on-surface">4.1%</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">of shift</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 32%"></div>
+</div>
+</div>
+<span class="font-body-sm text-body-sm text-tertiary font-medium">Optimal thermal HVAC state</span>
+</div>
+</div>
+<!-- Bento Section: Leaderboard Tiers & AI Coaching Matrices -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Driver Performance Tier Breakdown (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col p-space-md rounded-xl bg-surface-container-lowest shadow-sm justify-between gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Safety &amp; Performance Tier Distribution</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Calibrated across 1,420 telematics streams</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-outline">Target: &gt;90% Standard+</span>
+</div>
+</div>
+<!-- Tier Multi-Segment Bar -->
+<div class="flex flex-col gap-2">
+<div class="h-6 w-full rounded-lg bg-surface-container overflow-hidden flex shadow-inner">
+<div class="h-full bg-tertiary flex items-center justify-center text-on-tertiary font-telemetry-sm text-telemetry-sm font-bold px-2" style="width: 64%">
+            64%
+          </div>
+<div class="h-full bg-primary-container flex items-center justify-center text-on-primary font-telemetry-sm text-telemetry-sm font-bold px-2" style="width: 28%">
+            28%
+          </div>
+<div class="h-full bg-error flex items-center justify-center text-on-error font-telemetry-sm text-telemetry-sm font-bold px-2" style="width: 8%">
+            8%
+          </div>
+</div>
+<!-- Tier Legend Grid -->
+<div class="grid grid-cols-3 gap-2 mt-1">
+<div class="p-2.5 rounded-lg bg-tertiary-container/10 flex flex-col">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label-sm text-label-sm uppercase font-bold text-tertiary">Elite Tier (90-100)</span>
+</div>
+<span class="font-telemetry-md text-telemetry-md font-bold text-on-surface">908 Drivers</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Qualifies for max bonus</span>
+</div>
+<div class="p-2.5 rounded-lg bg-primary-container/10 flex flex-col">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm uppercase font-bold text-primary">Standard (75-89)</span>
+</div>
+<span class="font-telemetry-md text-telemetry-md font-bold text-on-surface">398 Drivers</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Nominal SLA compliance</span>
+</div>
+<div class="p-2.5 rounded-lg bg-error-container/20 flex flex-col">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-label-sm text-label-sm uppercase font-bold text-error">Coaching Needed (&lt;75)</span>
+</div>
+<span class="font-telemetry-md text-telemetry-md font-bold text-on-surface">114 Drivers</span>
+<span class="font-body-sm text-body-sm text-error font-semibold">Priority remediation</span>
+</div>
+</div>
+</div>
+<!-- Real-time Sparkline Energy Trajectory -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between gap-4">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold uppercase text-outline">Kinetic Recovery Efficiency Trend</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface">7-Day Aggregated Wh/km Velocity</span>
+</div>
+<div class="h-10 w-44 shrink-0">
+<svg class="w-full h-full stroke-current text-primary fill-none" viewBox="0 0 160 40">
+<path d="M 0 32 Q 25 18 45 22 T 90 12 T 130 16 T 160 8" stroke-linecap="round" stroke-width="2.5"></path>
+<circle class="fill-primary" cx="160" cy="8" r="3"></circle>
+</svg>
+</div>
+</div>
+</div>
+<!-- AI Coaching & Remediation Directives (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col p-space-md rounded-xl bg-surface-container-lowest shadow-sm justify-between gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-600 text-[20px]">smart_toy</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Automated Coaching Queue</h2>
+</div>
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">
+          12 URGENT
+        </span>
+</div>
+<!-- Coaching Incident Card -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-error-container text-error flex items-center justify-center font-bold text-body-sm">
+              !
+            </div>
+<div>
+<div class="font-body-sm text-body-sm font-bold text-on-surface">Aggressive Incline Launches</div>
+<div class="font-label-sm text-label-sm text-outline">Peenya Hill Route · Cluster #4B</div>
+</div>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-error font-bold">12 DRIVERS</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Excess torque pulse (&gt;320 Nm instantly at 12% grade) triggering premature inverter thermal protection.
+        </p>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-outline font-semibold">Recommended Module: Smooth Grade Ascent</span>
+<button class="px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-body-sm text-body-sm font-semibold transition-colors" type="button">
+            Assign Batch
+          </button>
+</div>
+</div>
+<!-- Secondary Coaching Pill -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">turn_sharp_right</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Late-apex braking: Koramangala Outer Ring</span>
+</div>
+<button class="text-secondary font-label-sm text-label-sm font-bold hover:underline" type="button">
+          View 7 Drivers
+        </button>
+</div>
+</div>
+</div>
+<!-- Detailed Driver Directory & Historical Telemetry Workspace -->
+<div class="flex flex-col rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden">
+<!-- Filter & Directory Search Controls -->
+<div class="p-space-md bg-surface-container-lowest flex flex-col lg:flex-row lg:items-center justify-between gap-space-md border-b border-surface-container">
+<!-- Search Input -->
+<div class="relative flex-1 max-w-lg">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full h-10 pl-10 pr-4 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary/20" placeholder="Filter by Driver Name, Employee ID (e.g. #DRV-2041), VIN, or Badge..." type="text">
+</div>
+<!-- Filters Array -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<!-- Hub Dropdown -->
+<div class="flex items-center bg-surface-container-low px-3 py-2 rounded-lg gap-2 text-on-surface font-body-sm text-body-sm cursor-pointer hover:bg-surface-container transition-colors">
+<span class="font-label-sm text-label-sm uppercase font-bold text-outline">Hub:</span>
+<span class="font-semibold">All Hubs (Koramangala, Peenya, Whitefield)</span>
+<span class="material-symbols-outlined text-[16px] text-outline">expand_more</span>
+</div>
+<!-- Shift Filter -->
+<div class="flex items-center bg-surface-container-low px-3 py-2 rounded-lg gap-2 text-on-surface font-body-sm text-body-sm cursor-pointer hover:bg-surface-container transition-colors">
+<span class="font-label-sm text-label-sm uppercase font-bold text-outline">Shift:</span>
+<span class="font-semibold">Day + Night Full-Time</span>
+<span class="material-symbols-outlined text-[16px] text-outline">expand_more</span>
+</div>
+<!-- Tier Filter -->
+<div class="flex items-center bg-surface-container-low px-3 py-2 rounded-lg gap-2 text-on-surface font-body-sm text-body-sm cursor-pointer hover:bg-surface-container transition-colors">
+<span class="font-label-sm text-label-sm uppercase font-bold text-outline">Tier:</span>
+<span class="font-semibold">All Tiers</span>
+<span class="material-symbols-outlined text-[16px] text-outline">expand_more</span>
+</div>
+<!-- Refresh Trigger -->
+<button aria-label="Refresh Data" class="p-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+</button>
+</div>
+</div>
+<!-- Telemetry Table Content -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/70 h-10">
+<th class="px-space-md font-label-sm text-label-sm uppercase tracking-wider text-outline font-bold">Driver Identity</th>
+<th class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-outline font-bold">Assigned Asset &amp; Hub</th>
+<th class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-outline font-bold text-right">Distance (Mo)</th>
+<th class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-outline font-bold text-center">Safety Score</th>
+<th class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-outline font-bold text-right">Energy (Wh/km)</th>
+<th class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-outline font-bold">Infractions (100km)</th>
+<th class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-outline font-bold text-right">Regen %</th>
+<th class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-outline font-bold text-right">On-Time SLA</th>
+<th class="px-space-md font-label-sm text-label-sm uppercase tracking-wider text-outline font-bold text-center">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<!-- Row 1: Rahul Sharma (Selected) -->
+<tr class="bg-primary-fixed/20 hover:bg-primary-fixed/30 transition-colors">
+<td class="px-space-md py-3">
+<div class="flex items-center gap-space-sm">
+<img class="w-9 h-9 rounded-full object-cover shadow-sm ring-2 ring-primary" data-alt="Professional portrait of Indian male EV commercial fleet driver smiling in smart collared uniform, well lit, high resolution studio shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqp1mS0QjP94SzREfr_2lsu391VlAyoJaQPmJLLWn9xhDj02zWObtqx4EH3KJ2ic_bUlzzjSDHyz9EChjvGEQeo2PY-tUTNWczK2B0RnOX2iPeToSuHzcTUbtQ-75-ySpjdpXBMAERH_-e6q3Fgu0FsfGzWvPqygLImucue17WvEmhkreGKvKbQHdJ-ga5aYzVailpD8n8tHObGcmxdwkPiGdFcRHst8ERjP9zFU44X2Fz0s2CsS78xQ">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-body-sm text-body-sm font-bold text-on-surface">Rahul Sharma</span>
+<span class="w-2 h-2 rounded-full bg-tertiary" title="Active on route"></span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-semibold">#DRV-2041 · Lic: KA-01-2018-92</span>
+</div>
+</div>
+</td>
+<td class="px-space-sm py-3">
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">MH 12 AB 4321</span>
+<span class="font-label-sm text-label-sm text-outline">Koramangala Hub</span>
+</div>
+</td>
+<td class="px-space-sm py-3 text-right">
+<div class="flex flex-col items-end">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">2,410 km</span>
+<span class="font-label-sm text-label-sm text-outline">142 Trips</span>
+</div>
+</td>
+<td class="px-space-sm py-3 text-center">
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-tertiary-container/20 text-tertiary font-telemetry-sm text-telemetry-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span class="">98 / 100</span>
+</div>
+</td>
+<td class="px-space-sm py-3 text-right">
+<div class="flex flex-col items-end">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-tertiary">91.4 Wh/km</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">Benchmark: 96</span>
+</div>
+</td>
+<td class="px-space-sm py-3">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-telemetry-sm text-telemetry-sm text-on-surface font-semibold" title="Harsh Brakes">0 HB</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-telemetry-sm text-telemetry-sm text-on-surface font-semibold" title="Harsh Turns">1 HT</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-telemetry-sm text-telemetry-sm text-tertiary font-semibold" title="Overspeeding">0 OS</span>
+</div>
+</td>
+<td class="px-space-sm py-3 text-right">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">21.2%</span>
+</td>
+<td class="px-space-sm py-3 text-right">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-tertiary">99.2%</span>
+</td>
+<td class="px-space-md py-3 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-primary" title="View Dossier" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant" title="Contact Driver" type="button">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Vikram Patil -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-space-md py-3">
+<div class="flex items-center gap-space-sm">
+<img class="w-9 h-9 rounded-full object-cover shadow-sm" data-alt="Close up portrait of mid-30s Indian driver wearing navy transport company shirt against subtle industrial gradient background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnG6m5gynx0PAzdSdBlgQe6uJqNLko80rPKSXPF9SpdVpHAQfd6iwCLHyhLeuRlHX9ZjAMCkS2tguoLfOraRGX58g4m9cHpbqKRZA8-kRD0snRPJyI_OY9KABcdLSxDndKK-32mZhnA4lb6KGnr0l7gfFiVHUphhwWL7ufbONlxEJL9LOAz75dPmJbMTBJI2avNm2I9xVbtAXxi7u6xKbUXUeN4BSm4v5Vdoidpbmnn9CP8ZFypQ7lyg">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-body-sm text-body-sm font-bold text-on-surface">Vikram Patil</span>
+<span class="w-2 h-2 rounded-full bg-tertiary" title="Active on route"></span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">#DRV-1980 · Lic: KA-05-2017-41</span>
+</div>
+</div>
+</td>
+<td class="px-space-sm py-3">
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">KA 03 MM 8812</span>
+<span class="font-label-sm text-label-sm text-outline">Whitefield Hub</span>
+</div>
+</td>
+<td class="px-space-sm py-3 text-right">
+<div class="flex flex-col items-end">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">2,180 km</span>
+<span class="font-label-sm text-label-sm text-outline">128 Trips</span>
+</div>
+</td>
+<td class="px-space-sm py-3 text-center">
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-tertiary-container/20 text-tertiary font-telemetry-sm text-telemetry-sm font-bold">
+<span class="">94 / 100</span>
+</div>
+</td>
+<td class="px-space-sm py-3 text-right">
+<div class="flex flex-col items-end">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">93.8 Wh/km</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">Benchmark: 96</span>
+</div>
+</td>
+<td class="px-space-sm py-3">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-telemetry-sm text-telemetry-sm text-on-surface font-semibold">1 HB</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-telemetry-sm text-telemetry-sm text-on-surface font-semibold">0 HT</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-telemetry-sm text-telemetry-sm text-tertiary font-semibold">0 OS</span>
+</div>
+</td>
+<td class="px-space-sm py-3 text-right">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">19.5%</span>
+</td>
+<td class="px-space-sm py-3 text-right">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-tertiary">97.8%</span>
+</td>
+<td class="px-space-md py-3 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-on-surface" title="View Dossier" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant" title="Contact Driver" type="button">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Suresh Nair -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-space-md py-3">
+<div class="flex items-center gap-space-sm">
+<img class="w-9 h-9 rounded-full object-cover shadow-sm" data-alt="Professional headshot of senior South Indian male logistics driver with graying mustache, looking forward, calm focused expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmGe_gmlJ9ibZDaIt1vsyKEMCaOt26w1YYuNgrF-8ovy2LkZKmnsfrP_rUi7xx3CnNox4bqt_xGTCL6Kw2PCmpDd7hrmqnft8iPQKSYCeNQo3IIZJl2Vy10kkSxgzeltAp3HKclpp3DKes9WrciOg3JlVToxd2FLpean5ey4ZwkFfBbqbp9HFbQ4FDcWJPZ1W3mI267SBLZGi-wmKIWOxFiJ9RsVvBBqTMbSNZjQODSXQ2V1ykKbmv7g">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-body-sm text-body-sm font-bold text-on-surface">Suresh Nair</span>
+<span class="w-2 h-2 rounded-full bg-outline" title="Off shift"></span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">#DRV-1104 · Lic: KL-07-2015-88</span>
+</div>
+</div>
+</td>
+<td class="px-space-sm py-3">
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">KA 51 EK 1094</span>
+<span class="font-label-sm text-label-sm text-outline">Peenya Hub</span>
+</div>
+</td>
+<td class="px-space-sm py-3 text-right">
+<div class="flex flex-col items-end">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">1,890 km</span>
+<span class="font-label-sm text-label-sm text-outline">112 Trips</span>
+</div>
+</td>
+<td class="px-space-sm py-3 text-center">
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-container/20 text-secondary font-telemetry-sm text-telemetry-sm font-bold">
+<span class="">86 / 100</span>
+</div>
+</td>
+<td class="px-space-sm py-3 text-right">
+<div class="flex flex-col items-end">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">97.1 Wh/km</span>
+<span class="font-label-sm text-label-sm text-outline">Benchmark: 96</span>
+</div>
+</td>
+<td class="px-space-sm py-3">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded bg-amber-100 text-amber-900 font-telemetry-sm text-telemetry-sm font-semibold">2 HB</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-telemetry-sm text-telemetry-sm text-on-surface font-semibold">1 HT</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-telemetry-sm text-telemetry-sm text-tertiary font-semibold">0 OS</span>
+</div>
+</td>
+<td class="px-space-sm py-3 text-right">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">17.1%</span>
+</td>
+<td class="px-space-sm py-3 text-right">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">95.4%</span>
+</td>
+<td class="px-space-md py-3 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-on-surface" title="View Dossier" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant" title="Contact Driver" type="button">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Rajesh K. (Flagged for coaching) -->
+<tr class="hover:bg-error-container/10 transition-colors">
+<td class="px-space-md py-3">
+<div class="flex items-center gap-space-sm">
+<img class="w-9 h-9 rounded-full object-cover shadow-sm ring-1 ring-error" data-alt="Portrait of young commercial fleet driver in late twenties with attentive expression, wearing safety reflector collar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADHIoMxnjyc0nJo8fAB7xDUTrylLGMkQGARnTkL2695zQQcofzlm-QUc2xKCXt33Tny-0MoUNSZYGwsz5WcbKI2iL1VfDvOviXDQIYb2TJM1WJmwOp8NaFXO6Esv8j4iNV0r5ymc7TMTu7BsIM4hkyPQ0E31MLDn5A4RyOyFVjSKMFqXNgpb39HnlKbIvCUj3Lot_qvGZ1MebArCzWKVaLm4zSPLJVAzZwC-sHXk0T515mgwFWDcJuKA">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-body-sm text-body-sm font-bold text-on-surface">Rajesh K.</span>
+<span class="w-2 h-2 rounded-full bg-error" title="Active - Incline Launch Flag"></span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-error font-semibold">#DRV-0914 · Lic: KA-04-2021-12</span>
+</div>
+</div>
+</td>
+<td class="px-space-sm py-3">
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">KA 04 NM 2291</span>
+<span class="font-label-sm text-label-sm text-outline">Peenya Hub</span>
+</div>
+</td>
+<td class="px-space-sm py-3 text-right">
+<div class="flex flex-col items-end">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">1,640 km</span>
+<span class="font-label-sm text-label-sm text-outline">98 Trips</span>
+</div>
+</td>
+<td class="px-space-sm py-3 text-center">
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+<span class="">74 / 100</span>
+</div>
+</td>
+<td class="px-space-sm py-3 text-right">
+<div class="flex flex-col items-end">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-error">108.6 Wh/km</span>
+<span class="font-label-sm text-label-sm text-error font-semibold">+13.1% over</span>
+</div>
+</td>
+<td class="px-space-sm py-3">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm font-semibold">5 HB</span>
+<span class="px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm font-semibold">3 HT</span>
+<span class="px-1.5 py-0.5 rounded bg-amber-100 text-amber-900 font-telemetry-sm text-telemetry-sm font-semibold">1 OS</span>
+</div>
+</td>
+<td class="px-space-sm py-3 text-right">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-error">11.4%</span>
+</td>
+<td class="px-space-sm py-3 text-right">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-amber-800">89.1%</span>
+</td>
+<td class="px-space-md py-3 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="px-2 py-1 rounded bg-error text-on-error font-label-sm text-label-sm font-bold hover:bg-error-container hover:text-on-error-container transition-colors" type="button">
+                  Assign Coach
+                </button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Priya M. -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-space-md py-3">
+<div class="flex items-center gap-space-sm">
+<img class="w-9 h-9 rounded-full object-cover shadow-sm" data-alt="Professional studio headshot portrait of Indian female EV commercial driver with confident warm smile, wearing clean transport uniform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-ozUC_vFa-O0Lv8xRppXkXMwHUBvh7GfClC47YZMYRHas0GdYWiiNzgnkzsKgqVqWciTxcFbmngjwGO7JcO45PNwo7EJCnsPFObKoqxtcqqD5Y8sqo2Kd-9Egr2JsyHOTgP6rgOMUTEkzZSZ-tjZvsXgJDlHgb-1FGMLr_zQBcKz3rcd7rhkBaLANc7Ccyzhu46uavIiwL4PRyubgOPn7fSLBEXk541thL5XXdhsh1dtbUb3dSCl6Ow">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-body-sm text-body-sm font-bold text-on-surface">Priya M.</span>
+<span class="w-2 h-2 rounded-full bg-tertiary" title="Active on route"></span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">#DRV-2311 · Lic: KA-53-2020-55</span>
+</div>
+</div>
+</td>
+<td class="px-space-sm py-3">
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">KA 53 TR 9901</span>
+<span class="font-label-sm text-label-sm text-outline">Whitefield Hub</span>
+</div>
+</td>
+<td class="px-space-sm py-3 text-right">
+<div class="flex flex-col items-end">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">2,320 km</span>
+<span class="font-label-sm text-label-sm text-outline">134 Trips</span>
+</div>
+</td>
+<td class="px-space-sm py-3 text-center">
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-tertiary-container/20 text-tertiary font-telemetry-sm text-telemetry-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span class="">97 / 100</span>
+</div>
+</td>
+<td class="px-space-sm py-3 text-right">
+<div class="flex flex-col items-end">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-tertiary">92.0 Wh/km</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">Benchmark: 96</span>
+</div>
+</td>
+<td class="px-space-sm py-3">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-telemetry-sm text-telemetry-sm text-on-surface font-semibold">0 HB</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-telemetry-sm text-telemetry-sm text-on-surface font-semibold">0 HT</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-telemetry-sm text-telemetry-sm text-tertiary font-semibold">0 OS</span>
+</div>
+</td>
+<td class="px-space-sm py-3 text-right">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">20.8%</span>
+</td>
+<td class="px-space-sm py-3 text-right">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-tertiary">99.5%</span>
+</td>
+<td class="px-space-md py-3 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-on-surface" title="View Dossier" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant" title="Contact Driver" type="button">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination & Bulk Status -->
+<div class="p-space-sm px-space-md bg-surface-container-low/40 flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-outline">Showing 5 of 1,420 Active Driver Telemetry Profiles</span>
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-body-sm disabled:opacity-50" disabled="" type="button">Previous</button>
+<span class="px-3 py-1 font-telemetry-sm text-telemetry-sm font-bold text-primary">Page 1 of 284</span>
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm" type="button">Next</button>
+</div>
+</div>
+</div>
+<!-- Contextual Driver Dossier & Real-Time Telemetry Deep-Dive Drawer (Rahul Sharma) -->
+<div class="flex flex-col rounded-xl bg-surface-container-lowest shadow-md overflow-hidden">
+<!-- Drawer Header Bar -->
+<div class="p-space-md bg-surface-container flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center font-bold text-headline-sm shadow-sm">
+          RS
+        </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Rahul Sharma</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed-dim/30 text-on-tertiary-fixed-variant font-label-sm text-label-sm font-bold">
+              ELITE TIER #1 RANK
+            </span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">ID: #DRV-2041 · Joined: Jan 2022 · Koramangala Operating Cluster</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<a class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container-high text-primary font-body-sm text-body-sm font-semibold shadow-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">electric_car</span>
+<span class="">View Vehicle Telemetry MH 12 AB 4321</span>
+</a>
+<button class="flex items-center gap-1 px-3 py-2 rounded-lg bg-primary text-on-primary font-body-sm text-body-sm font-semibold shadow-sm hover:bg-primary-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">military_tech</span>
+<span class="">Issue Recognition</span>
+</button>
+</div>
+</div>
+<!-- Dossier Content Grid: 3-Column Split Layout -->
+<div class="p-space-md grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Col 1: Performance Highlights & Incentive Earning (4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Bonus & Incentive Card -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm uppercase font-bold text-outline">Current Cycle Incentive</span>
+<span class="material-symbols-outlined text-tertiary text-[20px]">monetization_on</span>
+</div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-telemetry-lg text-telemetry-lg font-bold text-on-surface">₹4,200</span>
+<span class="font-body-sm text-body-sm text-tertiary font-bold">+₹850 vs last cycle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Achieved via sustained efficiency &lt;95 Wh/km across 142 complete duty cycles without thermal threshold warnings.
+          </p>
+<div class="mt-space-sm pt-space-sm border-t border-surface-container flex items-center justify-between text-body-sm">
+<span class="text-outline">Payout Target Date:</span>
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">31 AUG 2024</span>
+</div>
+</div>
+<!-- Recent Vehicle Trips Timeline -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-bold text-outline">Shift Logs (Today)</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-semibold">MH 12 AB 4321</span>
+</div>
+<div class="space-y-3">
+<div class="p-2.5 rounded-lg bg-surface-container-lowest shadow-sm flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-bold text-on-surface">Trip #TR-8821: Silk Board to Domlur</span>
+<span class="font-label-sm text-label-sm text-outline">14.2 km · 28 min · 0 Harsh Events</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-tertiary">89 Wh/km</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-lowest shadow-sm flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-bold text-on-surface">Trip #TR-8810: Koramangala Hub to HSR</span>
+<span class="font-label-sm text-label-sm text-outline">9.6 km · 19 min · 0 Harsh Events</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-tertiary">92 Wh/km</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-lowest shadow-sm flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-bold text-on-surface">Trip #TR-8798: Hub Pre-Dispatch Calibration</span>
+<span class="font-label-sm text-label-sm text-outline">3.1 km · 8 min · Automated Battery Test</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-outline">94 Wh/km</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Col 2: Speed Consistency Curve & Throttle Linearity (4 cols) -->
+<div class="lg:col-span-4 flex flex-col p-space-md rounded-xl bg-surface-container-low justify-between gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase font-bold text-outline">Continuous Velocity Profile</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Speed Consistency Curve</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed-dim/30 text-tertiary font-label-sm text-label-sm font-bold">SMOOTH</span>
+</div>
+<!-- Custom Telemetry Speed SVG Wave -->
+<div class="w-full h-44 flex flex-col justify-end">
+<svg class="w-full h-full overflow-visible" viewBox="0 0 300 120">
+<!-- Grid baseline guidelines -->
+<line stroke="#cbd5e1" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="300" y1="20" y2="20"></line>
+<line stroke="#cbd5e1" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="300" y1="60" y2="60"></line>
+<line stroke="#cbd5e1" stroke-width="1" x1="0" x2="300" y1="100" y2="100"></line>
+<!-- Filled Telemetry Curve -->
+<path d="M 0 100 Q 20 70 45 65 T 90 40 T 135 48 T 180 32 T 225 38 T 270 55 L 300 62 L 300 100 Z" fill="rgba(0, 55, 176, 0.08)"></path>
+<path d="M 0 100 Q 20 70 45 65 T 90 40 T 135 48 T 180 32 T 225 38 T 270 55 L 300 62" fill="none" stroke="#0037b0" stroke-width="2.5"></path>
+<!-- Telemetry peak marker -->
+<circle class="fill-primary" cx="180" cy="32" r="4"></circle>
+<text class="font-telemetry-sm text-[10px] fill-primary font-bold" x="175" y="24">48 km/h (Limit: 50)</text>
+</svg>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-2 border-t border-surface-container">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Cruise Ratio</span>
+<span class="font-telemetry-md text-telemetry-md font-bold text-on-surface">71.8%</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Torque Ripple</span>
+<span class="font-telemetry-md text-telemetry-md font-bold text-tertiary">0.02 G (Nominal)</span>
+</div>
+</div>
+</div>
+<!-- Col 3: G-Force Lateral & Longitudinal Sensor Telemetry (4 cols) -->
+<div class="lg:col-span-4 flex flex-col p-space-md rounded-xl bg-surface-container-low justify-between gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase font-bold text-outline">Inertial Measurement Unit (IMU)</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">G-Force Shock Telemetry</span>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[20px]">sensors</span>
+</div>
+<!-- Visual G-Force Radar / Scatter Polar Plot -->
+<div class="flex items-center justify-center py-2">
+<div class="relative w-36 h-36 rounded-full border border-outline-variant/60 flex items-center justify-center bg-surface-container-lowest shadow-inner">
+<!-- Concentric Safety Rings -->
+<div class="w-24 h-24 rounded-full border border-dashed border-outline-variant/40"></div>
+<div class="w-12 h-12 rounded-full border border-outline-variant/20"></div>
+<!-- Crosshairs -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-full h-px bg-outline-variant/40"></div>
+</div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="h-full w-px bg-outline-variant/40"></div>
+</div>
+<!-- Plotted G-force points cluster (tightly contained = safe driver) -->
+<div class="w-2.5 h-2.5 rounded-full bg-tertiary absolute top-[44%] left-[48%] shadow"></div>
+<div class="w-2 h-2 rounded-full bg-primary absolute top-[52%] left-[44%]"></div>
+<div class="w-2 h-2 rounded-full bg-primary absolute top-[47%] left-[53%]"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-secondary absolute top-[41%] left-[46%]"></div>
+</div>
+</div>
+<!-- Metric Details -->
+<div class="flex flex-col gap-1.5 pt-2 border-t border-surface-container">
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">Peak Lateral Acceleration:</span>
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">0.24 G (Threshold: 0.50 G)</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">Max Longitudinal Decel:</span>
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-tertiary">0.28 G (Smooth Stop)</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">Zero Critical Impact Flag:</span>
+<span class="font-label-sm text-label-sm uppercase font-bold text-tertiary">CONFIRMED SAFE</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main></div>
+
+</body></html>

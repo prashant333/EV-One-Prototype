@@ -13,6 +13,8 @@ import { VehiclesTripsPage } from '@/modules/vehicles-trips/VehiclesTripsPage'
 import { SettingsPage } from '@/modules/settings/SettingsPage'
 import { VehicleHealthPage } from '@/modules/vehicles-health/VehicleHealthPage'
 import { VehicleHealthDetailPage } from '@/modules/vehicles-health/VehicleHealthDetailPage'
+import { ChargingSessionsPage } from '@/modules/charging-sessions/ChargingSessionsPage'
+import { DriverAnalyticsPage } from '@/modules/driver-analytics/DriverAnalyticsPage'
 import { ModuleStub } from '@/modules/ModuleStub'
 import { MODULES } from '@/data/platform'
 
@@ -21,6 +23,8 @@ const DESIGNED_SCREENS: Partial<Record<string, JSX.Element>> = {
   dashboard: <DashboardPage />,
   'vehicles-trips': <VehiclesTripsPage />,
   'vehicle-telemetry': <VehicleHealthPage />,
+  'charging-sessions': <ChargingSessionsPage />,
+  'driver-analytics': <DriverAnalyticsPage />,
   'organization-settings': <SettingsPage />,
 }
 

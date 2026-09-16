@@ -234,6 +234,28 @@ export const MODULES: PlatformModule[] = [
       'Vehicle health state, raw CAN/ECU signal streams, DTC monitoring and deep-inspection diagnostics.',
   },
   {
+    id: 'charging-sessions',
+    name: 'Charging Sessions',
+    icon: 'ev_station',
+    route: '/charging-sessions',
+    group: 'workspace',
+    // PRD: Charging event — yes / yes / yes
+    segments: [FLEET, LAST_MILE, OEM],
+    designed: true,
+    purpose: 'Charge and swap events, energy drawn, session cost and depot utilisation.',
+  },
+  {
+    id: 'driver-analytics',
+    name: 'Driver Analytics',
+    icon: 'speed',
+    route: '/driver-analytics',
+    group: 'workspace',
+    // PRD: Driver analytics — yes / yes / yes
+    segments: [FLEET, LAST_MILE, OEM],
+    designed: true,
+    purpose: 'Telemetry-graded driving behaviour, harsh-event scoring and efficiency leaderboards.',
+  },
+  {
     id: 'operational-alerts',
     name: 'Alerts',
     icon: 'warning',
@@ -274,28 +296,6 @@ export const MODULES: PlatformModule[] = [
     segments: [FLEET, LAST_MILE],
     designed: false,
     purpose: 'Arterial corridor design, schedule templates and route-level SLA targets.',
-  },
-  {
-    id: 'charging-sessions',
-    name: 'Charging Sessions',
-    icon: 'ev_station',
-    route: '/charging-sessions',
-    group: 'workspace',
-    // PRD: Charging event — yes / yes / yes
-    segments: [FLEET, LAST_MILE, OEM],
-    designed: false,
-    purpose: 'Charge and swap events, energy drawn, session cost and depot utilisation.',
-  },
-  {
-    id: 'driver-analytics',
-    name: 'Driver Analytics',
-    icon: 'speed',
-    route: '/driver-analytics',
-    group: 'workspace',
-    // PRD: Driver analytics — yes / yes / yes
-    segments: [FLEET, LAST_MILE, OEM],
-    designed: false,
-    purpose: 'Telemetry-graded driving behaviour, harsh-event scoring and efficiency leaderboards.',
   },
   {
     id: 'fota',

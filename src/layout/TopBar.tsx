@@ -99,9 +99,9 @@ function WorkspaceSwitcher() {
 
       {open && (
         <div className="panel absolute left-0 top-full z-50 mt-1 w-[360px] p-space-sm shadow-level-3">
-          <p className="font-label-sm text-label-sm px-space-sm py-1 font-bold uppercase tracking-wider text-outline">
+          {/* <p className="font-label-sm text-label-sm px-space-sm py-1 font-bold uppercase tracking-wider text-outline">
             One platform · two experience clusters
-          </p>
+          </p> */}
 
           {CLUSTERS.map((c) => (
             <div key={c.id} className="mt-space-xs">

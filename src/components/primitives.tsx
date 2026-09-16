@@ -132,6 +132,40 @@ export function ProgressBar({ value, tone = 'primary' }: { value: number; tone?:
   )
 }
 
+/** Switch control. Renders disabled when the caller has no edit permission. */
+export function Toggle({
+  checked,
+  onChange,
+  disabled = false,
+  label,
+}: {
+  checked: boolean
+  onChange: (next: boolean) => void
+  disabled?: boolean
+  label: string
+}) {
+  return (
+    <button
+      type="button"
+      role="switch"
+      aria-checked={checked}
+      aria-label={label}
+      title={disabled ? 'Your role cannot change this' : label}
+      disabled={disabled}
+      onClick={() => onChange(!checked)}
+      className={`relative inline-flex h-5 w-9 shrink-0 items-center rounded-pill transition-colors ${
+        disabled ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'
+      } ${checked ? 'bg-state-ok' : 'bg-outline-variant'}`}
+    >
+      <span
+        className={`inline-block h-4 w-4 transform rounded-pill bg-white shadow-level-1 transition-transform ${
+          checked ? 'translate-x-[18px]' : 'translate-x-0.5'
+        }`}
+      />
+    </button>
+  )
+}
+
 export function EmptyState({ icon, title, body }: { icon: string; title: string; body: string }) {
   return (
     <div className="flex flex-col items-center justify-center gap-space-sm px-space-lg py-space-2xl text-center">
