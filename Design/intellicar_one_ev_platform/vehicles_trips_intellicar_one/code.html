@@ -1,0 +1,842 @@
+<!DOCTYPE html><html lang="en" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-dim":"#d2d9f4","error-container":"#ffdad6","inverse-on-surface":"#eef0ff","surface-container-low":"#f2f3ff","primary":"#0037b0","primary-container":"#1d4ed8","on-tertiary-container":"#76eab6","primary-fixed-dim":"#b7c4ff","on-error":"#ffffff","tertiary-container":"#006948","on-tertiary-fixed-variant":"#005137","primary-fixed":"#dce1ff","surface-variant":"#dae2fd","inverse-surface":"#283044","on-secondary":"#ffffff","on-secondary-container":"#fffbff","surface-container":"#eaedff","on-tertiary-fixed":"#002114","tertiary":"#004f35","outline-variant":"#c4c5d7","secondary-fixed":"#e2dfff","on-primary-fixed":"#001551","on-primary":"#ffffff","on-tertiary":"#ffffff","surface-container-highest":"#dae2fd","surface-bright":"#faf8ff","on-surface-variant":"#434655","on-surface":"#131b2e","background":"#faf8ff","surface-container-lowest":"#ffffff","on-primary-fixed-variant":"#0039b5","secondary":"#4b41e1","secondary-fixed-dim":"#c3c0ff","on-secondary-fixed-variant":"#3323cc","on-secondary-fixed":"#0f0069","tertiary-fixed-dim":"#68dba9","inverse-primary":"#b7c4ff","tertiary-fixed":"#85f8c4","on-primary-container":"#cad3ff","secondary-container":"#645efb","on-background":"#131b2e","outline":"#747686","surface":"#faf8ff","error":"#ba1a1a","on-error-container":"#93000a","surface-tint":"#2151da","surface-container-high":"#e2e7ff"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-xl":"1.5rem","margin":"1rem","space-sm":"0.5rem","space-xs":"0.25rem","space-md":"0.75rem","space-2xs":"0.125rem","margin-desktop":"1.5rem","gutter-desktop":"1.5rem","gutter":"1rem","space-2xl":"2rem","space-lg":"1rem"},"fontFamily":{"telemetry-sm":["JetBrains Mono"],"body-lg":["Inter"],"label-sm":["Inter"],"body-md":["Inter"],"telemetry-md":["JetBrains Mono"],"headline-sm":["Inter"],"headline-md":["Inter"],"body-sm":["Inter"],"headline-xl-mobile":["Inter"],"headline-lg":["Inter"],"telemetry-lg":["JetBrains Mono"],"headline-xl":["Inter"],"label-md":["Inter"]},"fontSize":{"telemetry-sm":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0em","fontWeight":"500"}],"body-lg":["1rem",{"lineHeight":"1.5rem","letterSpacing":"0em","fontWeight":"400"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.05em","fontWeight":"600"}],"body-md":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0em","fontWeight":"400"}],"telemetry-md":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"-0.01em","fontWeight":"500"}],"headline-sm":["1rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-md":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0em","fontWeight":"400"}],"headline-xl-mobile":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}],"telemetry-lg":["1.5rem",{"lineHeight":"1.75rem","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-xl":["2rem",{"lineHeight":"2.5rem","letterSpacing":"-0.025em","fontWeight":"700"}],"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.025em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 bg-surface-container-lowest z-40 flex items-center justify-between px-space-md border-b border-outline-variant/30 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center gap-space-sm"><img alt="Intellicar One Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WQLuILNnMpHUxZn_K5NJPnaBXV58WX8qHGhFqIGAhBzANlVV1HK25pPUNQ5kAr42CUM_s-OGmn4PiE1jVXSdtybOlk_vf8Npwur9za3wc_v3UE-TjJXOrEsXHRRsLWlFKJQXY6WlG_RSAL_DUkUwFLpYv3BEqInavC8rxurIxfArXf9A8aDMzT2F5SBBSZkcHC9hj9DllRoisaC9UtqpkGYH0qSQpmkoaXXuw5UqnO9XpHt_OTxoVxjbv6"><div class="flex flex-col leading-none"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-bold">INTELLICAR<span class="text-primary font-bold ml-1">ONE</span></span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Enterprise Telemetry</span></div></div><div class="h-6 w-px bg-outline-variant/50 mx-space-2xs"></div><div class="relative group"><button class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors text-left" type="button"><div class="w-2 h-2 rounded-full bg-primary"></div><div class="flex flex-col leading-tight"><span class="font-label-sm text-label-sm font-semibold uppercase text-primary tracking-wider">Workspace</span><span class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1">Fleet &amp; Mobility<span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span></span></div></button></div></div><div class="flex items-center gap-space-sm flex-1 max-w-4xl mx-space-md"><div class="flex items-center bg-surface-container-low px-space-sm py-1 rounded-lg border border-outline-variant/40 gap-space-xs text-on-surface-variant font-body-sm text-body-sm shrink-0"><div class="flex items-center gap-1 cursor-pointer hover:text-on-surface"><span class="font-label-sm text-label-sm uppercase font-semibold text-outline">Org:</span><span class="material-symbols-outlined text-[14px]">arrow_drop_down</span></div><div class="h-3 w-px bg-outline-variant/60"></div><div class="flex items-center gap-1 cursor-pointer hover:text-on-surface"><span class="font-label-sm text-label-sm uppercase font-semibold text-outline">Reg:</span><span class="">Bengaluru Hub</span><span class="material-symbols-outlined text-[14px]">arrow_drop_down</span></div><div class="h-3 w-px bg-outline-variant/60"></div><div class="flex items-center gap-1 cursor-pointer hover:text-on-surface"><span class="font-label-sm text-label-sm uppercase font-semibold text-outline">Site:</span><span class="">All Sites</span><span class="material-symbols-outlined text-[14px]">arrow_drop_down</span></div><div class="h-3 w-px bg-outline-variant/60"></div><div class="flex items-center gap-1 cursor-pointer hover:text-on-surface"><span class="font-label-sm text-label-sm uppercase font-semibold text-outline">Time:</span><span class="font-telemetry-sm text-telemetry-sm text-primary font-medium">24h</span><span class="material-symbols-outlined text-[14px]">arrow_drop_down</span></div></div><div class="relative flex-1 min-w-[240px]"><span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full h-9 pl-9 pr-12 rounded-lg bg-surface-container-low border border-outline-variant/40 text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="Search vehicle ID, battery ID, VIN, driver (e.g. VH-8021)..." type="text"><kbd class="absolute right-space-sm top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded bg-surface-container border border-outline-variant/60 font-telemetry-sm text-telemetry-sm text-on-surface-variant">⌘K</kbd></div></div><div class="flex items-center gap-space-md shrink-0"><div class="hidden xl:flex items-center gap-2 px-space-sm py-1 rounded bg-tertiary-container/10 border border-tertiary-container/30"><div class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></div><div class="flex flex-col leading-none"></div></div><div class="flex items-center gap-space-xs"><button aria-label="Alerts" class="relative p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 flex items-center justify-center min-w-[16px] h-4 px-1 rounded-full bg-error text-on-error font-telemetry-sm text-[10px] font-bold">18</span></button><button aria-label="Documentation" class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">help</span></button></div><div class="h-6 w-px bg-outline-variant/50"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden 2xl:flex flex-col leading-tight"><span class="font-body-sm text-body-sm font-semibold text-on-surface">ABC Mobility Team</span><span class="font-label-sm text-label-sm text-on-surface-variant">Operations Lead</span></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-lowest border-r border-outline-variant/30 z-30 flex flex-col justify-between overflow-y-auto overflow-x-hidden transition-all duration-300 ease-in-out group" id="app-sidebar"><div class="py-space-md flex flex-col gap-space-lg"><div class="px-space-md group-[.collapsed]:px-2"><nav class="space-y-1" data-active-classes="bg-primary text-on-primary font-semibold"><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="overview" href="#" title="Dashboard"><span class="material-symbols-outlined text-[18px] shrink-0">home</span><span class="truncate group-[.collapsed]:hidden">Dashboard</span></a><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="assets-registry" href="#" title="Assets Registry"><span class="material-symbols-outlined text-[18px] shrink-0">database</span><span class="truncate group-[.collapsed]:hidden">Assets Registry</span></a><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="live-operations-map" href="#" title="Live Tracking"><span class="material-symbols-outlined text-[18px] shrink-0">map</span><span class="truncate group-[.collapsed]:hidden">Live Tracking</span></a></nav></div><div class="px-space-md group-[.collapsed]:px-2"><div class="flex items-center justify-between px-space-sm group-[.collapsed]:px-0 group-[.collapsed]:justify-center py-1.5 mb-space-xs rounded bg-surface-container-high/60"><span class="text-primary font-label-sm text-label-sm uppercase font-bold tracking-wider truncate group-[.collapsed]:hidden">Workspace: Fleet</span><span class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span></div><nav class="space-y-1" data-active-classes="bg-primary text-on-primary font-semibold"><a aria-current="page" class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg transition-colors bg-primary text-on-primary font-semibold shadow-xs font-body-sm text-body-sm" data-path="vehicles-and-trips" href="#" title="Vehicles &amp; Trips"><span class="material-symbols-outlined text-[18px] shrink-0">directions_car</span><span class="truncate group-[.collapsed]:hidden">Vehicles &amp; Trips</span></a><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="battery-health" href="#" title="Battery"><span class="material-symbols-outlined text-[18px] shrink-0">battery_charging_full</span><span class="truncate group-[.collapsed]:hidden">Battery</span></a><a class="flex items-center justify-between group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm relative" data-path="operational-alerts" href="#" title="Operational Alerts (18)"><div class="flex items-center gap-space-sm group-[.collapsed]:gap-0"><span class="material-symbols-outlined text-[18px] shrink-0">warning</span><span class="truncate group-[.collapsed]:hidden">Operational Alerts</span></div><span class="px-1.5 py-0.5 rounded-full bg-error-container text-on-error-container font-telemetry-sm text-[11px] font-bold group-[.collapsed]:hidden">18</span><span class="hidden group-[.collapsed]:block absolute top-1.5 right-2 w-2 h-2 rounded-full bg-error"></span></a><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="incident-management" href="#" title="Operation and Maintennace"><span class="material-symbols-outlined text-[18px] shrink-0">emergency</span><span class="truncate group-[.collapsed]:hidden">Operation and Maintennace</span></a><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="geofences" href="#" title="Geofences"><span class="material-symbols-outlined text-[18px] shrink-0">share_location</span><span class="truncate group-[.collapsed]:hidden">Geofences</span></a><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="routes-and-corridors" href="#" title="Routes &amp; Corridors"><span class="material-symbols-outlined text-[18px] shrink-0">alt_route</span><span class="truncate group-[.collapsed]:hidden">Routes &amp; Corridors</span></a><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="charging-sessions" href="#" title="Charging Sessions"><span class="material-symbols-outlined text-[18px] shrink-0">ev_station</span><span class="truncate group-[.collapsed]:hidden">Charging Sessions</span></a><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="driver-analytics" href="#" title="Driver Analytics"><span class="material-symbols-outlined text-[18px] shrink-0">speed</span><span class="truncate group-[.collapsed]:hidden">Driver Analytics</span></a></nav></div><div class="px-space-md group-[.collapsed]:px-2"><div class="px-space-sm group-[.collapsed]:px-0 group-[.collapsed]:text-center py-1.5 mb-space-xs rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase font-bold tracking-wider truncate group-[.collapsed]:hidden">Intelligence and analytics</div><div class="hidden group-[.collapsed]:block h-px bg-outline-variant/30 my-2 mx-1"></div><nav class="space-y-1" data-active-classes="bg-primary text-on-primary font-semibold"><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="asset-intelligence" href="#" title="Asset Intelligence"><span class="material-symbols-outlined text-[18px] shrink-0">insights</span><span class="truncate group-[.collapsed]:hidden">Asset Intelligence</span></a><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="reports-and-analytics" href="#" title="Reports &amp; Analytics"><span class="material-symbols-outlined text-[18px] shrink-0">bar_chart</span><span class="truncate group-[.collapsed]:hidden">Reports &amp; Analytics</span></a></nav></div><div class="px-space-md group-[.collapsed]:px-2 mt-auto"><div class="px-space-sm group-[.collapsed]:px-0 group-[.collapsed]:text-center py-1.5 mb-space-xs rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase font-bold tracking-wider truncate group-[.collapsed]:hidden">System &amp; Settings</div><div class="hidden group-[.collapsed]:block h-px bg-outline-variant/30 my-2 mx-1"></div><nav class="space-y-1" data-active-classes="bg-primary text-on-primary font-semibold"><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="integrations-and-apis" href="#" title="Integrations &amp; APIs"><span class="material-symbols-outlined text-[18px] shrink-0">hub</span><span class="truncate group-[.collapsed]:hidden">Integrations &amp; APIs</span></a><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="organization-and-settings" href="#" title="Organization &amp; Settings"><span class="material-symbols-outlined text-[18px] shrink-0">settings</span><span class="truncate group-[.collapsed]:hidden">Organization &amp; Settings</span></a></nav></div></div><div class="p-space-md group-[.collapsed]:p-2 border-t border-outline-variant/30 flex flex-col gap-space-xs bg-surface-container-low/50"><div class="flex items-center justify-between group-[.collapsed]:justify-center p-2 rounded bg-surface-container-lowest border border-outline-variant/40" title="ABC Mobility - Pro Tier"><div class="flex items-center gap-2 overflow-hidden"><span class="material-symbols-outlined text-primary text-[18px] shrink-0">verified</span><div class="flex flex-col truncate group-[.collapsed]:hidden"><span class="font-body-sm text-body-sm font-semibold truncate text-on-surface">ABC Mobility</span><span class="font-label-sm text-label-sm text-primary font-bold uppercase">Pro Tier</span></div></div><span class="material-symbols-outlined text-on-surface-variant text-[16px] group-[.collapsed]:hidden">unfold_more</span></div><div class="flex items-center justify-between group-[.collapsed]:justify-center pt-space-xs"><button class="flex items-center gap-1.5 text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors group-[.collapsed]:hidden" title="Support" type="button"><span class="material-symbols-outlined text-[16px]">contact_support</span><span class="">Support</span></button><button aria-label="Toggle sidebar" class="p-1 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors flex items-center justify-center" id="sidebar-toggle-btn" title="Collapse sidebar" type="button"><span class="material-symbols-outlined text-[18px] transition-transform duration-300" id="sidebar-toggle-icon">keyboard_double_arrow_left</span></button></div></div></aside><div class="pl-64 transition-all duration-300 ease-in-out" id="main-content-container"><main class="w-full pt-16 bg-surface min-h-screen px-space-md"><div class="flex flex-col w-full pb-space-2xl space-y-space-lg">
+<!-- Breadcrumbs, Title & Context Controls -->
+<div class="flex flex-col pt-space-sm gap-space-md">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<span class="hover:text-primary cursor-pointer transition-colors">Workspaces</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-primary cursor-pointer transition-colors">Fleet &amp; Mobility</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-bold">Vehicles &amp; Trips</span>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md py-1">
+<div class="flex flex-col">
+<div class="flex items-center gap-3">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Vehicles &amp; Trips</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-telemetry-sm text-telemetry-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+            SYNCED 1s AGO
+          </span>
+</div>
+</div>
+<div class="flex items-center shrink-0 flex-nowrap gap-3"><button class="inline-flex items-center gap-1.5 px-space-sm py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container transition-all" type="button"><span class="material-symbols-outlined text-[16px]">file_download</span>Export Trip Logs</button><button class="inline-flex items-center gap-1.5 px-space-sm py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container transition-all" type="button"><span class="material-symbols-outlined text-[16px]">share_location</span>Define Geofence</button><button class="inline-flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md shadow-sm hover:bg-primary transition-all" type="button"><span class="material-symbols-outlined text-[16px]">add_circle</span>&nbsp;Create Schedules &amp; Trip</button></div>
+</div>
+<!-- Live Telemetry Health Mini-bar -->
+<div class="flex flex-wrap items-center font-telemetry-sm text-telemetry-sm text-on-surface-variant pt-1.5 gap-2.5">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-lowest shadow-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-semibold text-on-surface">1,180</span> Active Trips
+      </span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-lowest shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-semibold text-on-surface">98.4%</span> On-Schedule SLA
+      </span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-lowest shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-semibold text-on-surface">42</span> Active Geofences
+      </span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-error-container text-on-error-container shadow-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+        14 Corridor Breaches Flagged
+      </span>
+</div>
+</div>
+<!-- Top KPI Metrics Bar -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-sm">
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant tracking-wider">Total Trips Today</span>
+<span class="material-symbols-outlined text-primary text-[20px]">directions_car</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-telemetry-lg text-telemetry-lg text-on-surface font-bold">2,410</span>
+<span class="font-telemetry-sm text-telemetry-sm text-tertiary font-semibold flex items-center">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +14.2%
+        </span>
+</div>
+<div class="mt-2 w-full bg-surface-container rounded-full h-1 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 78%"></div>
+</div>
+<span class="mt-1 text-right font-label-sm text-label-sm text-on-surface-variant">Target 3,000 / day</span>
+</div>
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant tracking-wider">Dispatch SLA</span>
+<span class="material-symbols-outlined text-tertiary text-[20px]">timelapse</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-telemetry-lg text-telemetry-lg text-on-surface font-bold">98.2%</span>
+<span class="font-telemetry-sm text-telemetry-sm text-tertiary font-semibold flex items-center">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> SLA Compliant
+        </span>
+</div>
+<div class="mt-2 w-full bg-surface-container rounded-full h-1 overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 98.2%"></div>
+</div>
+<span class="mt-1 text-right font-label-sm text-label-sm text-on-surface-variant">&lt; 3m gate variance</span>
+</div>
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant tracking-wider">Geofence Compliance</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">shield</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-telemetry-lg text-telemetry-lg text-on-surface font-bold">99.1%</span>
+<span class="font-telemetry-sm text-telemetry-sm text-error font-semibold flex items-center">
+<span class="material-symbols-outlined text-[14px]">warning</span> 9 deviations
+        </span>
+</div>
+<div class="mt-2 w-full bg-surface-container rounded-full h-1 overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 99.1%"></div>
+</div>
+<span class="mt-1 text-right font-label-sm text-label-sm text-on-surface-variant">Across 42 arterial routes</span>
+</div>
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant tracking-wider">Avg Turnaround</span>
+<span class="material-symbols-outlined text-primary text-[20px]">update</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-telemetry-lg text-telemetry-lg text-on-surface font-bold">42.4<span class="text-body-sm font-normal text-on-surface-variant">m</span></span>
+<span class="font-telemetry-sm text-telemetry-sm text-tertiary font-semibold flex items-center">
+<span class="material-symbols-outlined text-[14px]">arrow_downward</span> -3.8m avg
+        </span>
+</div>
+<div class="mt-2 w-full bg-surface-container rounded-full h-1 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 65%"></div>
+</div>
+<span class="mt-1 text-right font-label-sm text-label-sm text-on-surface-variant">Cycle: Dock-to-Hub</span>
+</div>
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant tracking-wider">Idle Staging Delay</span>
+<span class="material-symbols-outlined text-outline text-[20px]">hourglass_empty</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-telemetry-lg text-telemetry-lg text-on-surface font-bold">6.2<span class="text-body-sm font-normal text-on-surface-variant">m</span></span>
+<span class="font-telemetry-sm text-telemetry-sm text-tertiary font-semibold flex items-center">
+          Target &lt;8.0m
+        </span>
+</div>
+<div class="mt-2 w-full bg-surface-container rounded-full h-1 overflow-hidden">
+<div class="bg-tertiary-fixed-dim h-full rounded-full" style="width: 52%"></div>
+</div>
+<span class="mt-1 text-right font-label-sm text-label-sm text-on-surface-variant">32 docks currently active</span>
+</div>
+</div>
+<!-- Geofence & Corridor Control Sub-Bar -->
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between p-space-sm rounded-xl bg-surface-container-lowest shadow-sm gap-space-sm">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant px-2">Corridors:</span>
+<button class="px-3 py-1 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-semibold transition-all" type="button">All Zones (42)</button>
+</div>
+<!-- Scrollable Geofence Quick Chips -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 lg:pb-0">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors shrink-0">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Koramangala Hub</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">148 EVs</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors shrink-0">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Peenya Corridor</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">84 EVs</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors shrink-0">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Airport Arterial</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">32 EVs</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors shrink-0">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Whitefield Ring</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">96 EVs</span>
+</div>
+</div>
+</div>
+<!-- Interactive Split View: Real-Time Trips (70%) & Geofence Inspector (30%) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md items-start">
+<!-- MAIN TRIP TRACKER SECTION (8 of 12 cols on desktop) -->
+<div class="xl:col-span-8 flex flex-col gap-space-sm">
+<!-- Trips Sub-tabs & Search Filter Container -->
+<div class="flex flex-col md:flex-row md:items-center justify-between p-space-sm rounded-xl bg-surface-container-lowest shadow-sm gap-space-sm">
+<div class="flex items-center gap-1 overflow-x-auto">
+<button class="px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md flex items-center gap-2 shrink-0" type="button">
+<span class="">Active Trips</span>
+<span class="px-1.5 py-0.2 rounded-full bg-on-primary/20 text-on-primary font-telemetry-sm text-telemetry-sm">1,180</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-transparent hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center gap-2 shrink-0 transition-colors" type="button">
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-transparent hover:bg-error-container text-error font-label-md text-label-md flex items-center gap-2 shrink-0 transition-colors" type="button">
+<span class="">Breaches</span>
+<span class="px-1.5 py-0.2 rounded-full bg-error text-on-error font-telemetry-sm text-telemetry-sm">14</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<div class="relative w-full md:w-56">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-outline text-[16px]">search</span>
+<input class="w-full h-8 pl-8 pr-3 text-body-sm font-body-sm rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20" placeholder="Filter active trips..." type="text">
+</div>
+<button aria-label="Filter options" class="p-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Real-Time Interactive Trip Tracker Table -->
+<div class="rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-2.5 px-3">Trip ID &amp; Priority</th>
+<th class="py-2.5 px-3">Vehicle &amp; Model</th>
+<th class="py-2.5 px-3">Driver &amp; Dispatch</th>
+<th class="py-2.5 px-3">Corridor / Geo-Route</th>
+<th class="py-2.5 px-3 text-right">Dep / ETA Drift</th>
+<th class="py-2.5 px-3 text-right">SoC &amp; Range</th>
+<th class="py-2.5 px-3 text-center">Corridor State</th>
+<th class="py-2.5 px-3 text-center">Quick Action</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-body-sm font-body-sm text-on-surface">
+<!-- ROW 1: Flagged Breach (Tata Ace EV) -->
+<tr class="bg-error-container/15 hover:bg-error-container/25 transition-colors">
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-primary">TRP-89211</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-error font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> High Priority
+                    </span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">MH 12 AB 4321</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">Tata Ace EV (LCV)</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Ramesh K.</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">+91 98402 12093</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-1 font-medium text-on-surface">
+<span class="">Peenya Hub 4</span>
+<span class="material-symbols-outlined text-[14px] text-outline">arrow_forward</span>
+<span class="">Electronic City Dock</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Arterial Corridor 1A</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-medium text-on-surface">14:10 · ETA 15:45</span>
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-error">+18m Delay</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex flex-col items-end">
+<div class="flex items-center gap-1 font-telemetry-sm text-telemetry-sm font-bold text-on-surface">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                      72% SoC
+                    </div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">84 km est.</span>
+</div>
+</td>
+<td class="py-3 px-3 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[13px]">wrong_location</span>
+                    Route Deviation (1.4 km)
+                  </span>
+</td>
+<td class="py-3 px-3 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1 rounded bg-surface-container hover:bg-surface-container-high text-primary" title="Live GPS Breadcrumb" type="button">
+<span class="material-symbols-outlined text-[16px]">location_searching</span>
+</button>
+<button class="p-1 rounded bg-primary text-on-primary" title="Alert Driver / Reroute" type="button">
+<span class="material-symbols-outlined text-[16px]">send</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Operator Overrides" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 2: KA 03 MN 7821 (Mahindra Treo) -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-primary">TRP-89218</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Standard</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">KA 03 MN 7821</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">Mahindra Treo (3W)</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Vijay S.</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">+91 94481 44521</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-1 font-medium text-on-surface">
+<span class="">Koramangala 5th</span>
+<span class="material-symbols-outlined text-[14px] text-outline">arrow_forward</span>
+<span class="">Indiranagar Depot</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Inner Ring Radial</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-medium text-on-surface">14:25 · ETA 15:05</span>
+<span class="font-telemetry-sm text-telemetry-sm font-semibold text-tertiary">On-Time (±0m)</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex flex-col items-end">
+<div class="flex items-center gap-1 font-telemetry-sm text-telemetry-sm font-bold text-on-surface">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                      88% SoC
+                    </div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">98 km est.</span>
+</div>
+</td>
+<td class="py-3 px-3 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-container/15 text-tertiary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+                    Inside Corridor
+                  </span>
+</td>
+<td class="py-3 px-3 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1 rounded bg-surface-container hover:bg-surface-container-high text-primary" title="Live GPS Breadcrumb" type="button">
+<span class="material-symbols-outlined text-[16px]">location_searching</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Alert Driver / Reroute" type="button">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Operator Overrides" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 3: DL 01 EV 4582 (Euler HiLoad) -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-primary">TRP-89224</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Standard Express</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">DL 01 EV 4582</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">Euler HiLoad (3W)</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Anil Sharma</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">+91 97118 78239</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-1 font-medium text-on-surface">
+<span class="">Okhla Phase III</span>
+<span class="material-symbols-outlined text-[14px] text-outline">arrow_forward</span>
+<span class="">Noida Sector 62</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Expressway Geobelt</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-medium text-on-surface">13:50 · ETA 14:55</span>
+<span class="font-telemetry-sm text-telemetry-sm font-semibold text-secondary-container">+3m Variance</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex flex-col items-end">
+<div class="flex items-center gap-1 font-telemetry-sm text-telemetry-sm font-bold text-on-surface">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                      41% SoC
+                    </div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">46 km est.</span>
+</div>
+</td>
+<td class="py-3 px-3 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[13px]">pin_drop</span>
+                    Approaching Gate 2
+                  </span>
+</td>
+<td class="py-3 px-3 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1 rounded bg-surface-container hover:bg-surface-container-high text-primary" title="Live GPS Breadcrumb" type="button">
+<span class="material-symbols-outlined text-[16px]">location_searching</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Alert Driver / Reroute" type="button">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Operator Overrides" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 4: KA 51 EA 9012 (Piaggio Ape E-City) -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-primary">TRP-89230</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Passenger Feeder</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">KA 51 EA 9012</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">Piaggio Ape E-City</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Mohammad Rafi</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">+91 99023 55198</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-1 font-medium text-on-surface">
+<span class="">Baiyappanahalli Metro</span>
+<span class="material-symbols-outlined text-[14px] text-outline">arrow_forward</span>
+<span class="">Whitefield GRTP</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">IT Corridor Polygon</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-medium text-on-surface">14:30 · ETA 15:20</span>
+<span class="font-telemetry-sm text-telemetry-sm font-semibold text-tertiary">On-Time (-1m)</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex flex-col items-end">
+<div class="flex items-center gap-1 font-telemetry-sm text-telemetry-sm font-bold text-on-surface">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                      94% SoC
+                    </div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">112 km est.</span>
+</div>
+</td>
+<td class="py-3 px-3 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-container/15 text-tertiary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+                    Inside Corridor
+                  </span>
+</td>
+<td class="py-3 px-3 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1 rounded bg-surface-container hover:bg-surface-container-high text-primary" title="Live GPS Breadcrumb" type="button">
+<span class="material-symbols-outlined text-[16px]">location_searching</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Alert Driver / Reroute" type="button">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Operator Overrides" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 5: MH 14 GH 9901 (Mahindra Zor Grand) -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-primary">TRP-89239</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Heavy Cargo</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">MH 14 GH 9901</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">Mahindra Zor Grand</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Santosh Deshmukh</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">+91 93240 88219</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-1 font-medium text-on-surface">
+<span class="">Bhosari Industrial Hub</span>
+<span class="material-symbols-outlined text-[14px] text-outline">arrow_forward</span>
+<span class="">Chakan Gate 1</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Pune Auto Cluster</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-medium text-on-surface">14:00 · ETA 14:48</span>
+<span class="font-telemetry-sm text-telemetry-sm font-semibold text-tertiary">On-Time (+2m)</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex flex-col items-end">
+<div class="flex items-center gap-1 font-telemetry-sm text-telemetry-sm font-bold text-error">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+                      18% SoC
+                    </div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">22 km est.</span>
+</div>
+</td>
+<td class="py-3 px-3 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[13px]">ev_station</span>
+                    Swap En-Route
+                  </span>
+</td>
+<td class="py-3 px-3 text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1 rounded bg-surface-container hover:bg-surface-container-high text-primary" title="Live GPS Breadcrumb" type="button">
+<span class="material-symbols-outlined text-[16px]">location_searching</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Alert Driver / Reroute" type="button">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Operator Overrides" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination Footer -->
+<div class="flex items-center justify-between px-space-md py-2.5 bg-surface-container-low font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="">Showing <span class="font-bold text-on-surface">1-5</span> of <span class="font-bold text-on-surface">1,180</span> active trips</span>
+<span class="text-outline">|</span>
+<label class="flex items-center gap-1 text-label-sm">
+              Rows:
+              <select class="bg-surface-container-lowest rounded px-1.5 py-0.5 text-on-surface focus:outline-none">
+<option>25</option>
+<option>50</option>
+<option>100</option>
+</select>
+</label>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="First page" class="p-1 rounded hover:bg-surface-container text-on-surface-variant" type="button"><span class="material-symbols-outlined text-[16px]">first_page</span></button>
+<button aria-label="Previous page" class="p-1 rounded hover:bg-surface-container text-on-surface-variant" type="button"><span class="material-symbols-outlined text-[16px]">chevron_left</span></button>
+<span class="px-2 font-telemetry-sm text-telemetry-sm font-bold text-on-surface">1 / 236</span>
+<button aria-label="Next page" class="p-1 rounded hover:bg-surface-container text-on-surface-variant" type="button"><span class="material-symbols-outlined text-[16px]">chevron_right</span></button>
+<button aria-label="Last page" class="p-1 rounded hover:bg-surface-container text-on-surface-variant" type="button"><span class="material-symbols-outlined text-[16px]">last_page</span></button>
+</div>
+</div>
+</div>
+<!-- Real-Time Corridor Flow Sparklines & Anomaly Chart -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm">
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Speed SLA Compliance in Corridors</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Last 4 hours CAN-bus aggregated velocity</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-tertiary font-bold">99.4% inside &lt;45km/h</span>
+</div>
+<div class="mt-4 h-16 w-full flex items-end gap-1 px-1">
+<!-- Simulated micro-bars for velocity trends -->
+<div class="flex-1 bg-surface-container-high hover:bg-primary rounded-t transition-colors h-[40%]" title="Hour 1: 32 km/h avg"></div>
+<div class="flex-1 bg-surface-container-high hover:bg-primary rounded-t transition-colors h-[55%]" title="Hour 2: 38 km/h avg"></div>
+<div class="flex-1 bg-surface-container-high hover:bg-primary rounded-t transition-colors h-[70%]" title="Hour 3: 42 km/h avg"></div>
+<div class="flex-1 bg-surface-container-high hover:bg-primary rounded-t transition-colors h-[85%]" title="Hour 4: 44 km/h peak"></div>
+<div class="flex-1 bg-surface-container-high hover:bg-primary rounded-t transition-colors h-[60%]" title="Hour 5: 39 km/h avg"></div>
+<div class="flex-1 bg-surface-container-high hover:bg-primary rounded-t transition-colors h-[45%]" title="Hour 6: 35 km/h avg"></div>
+<div class="flex-1 bg-surface-container-high hover:bg-primary rounded-t transition-colors h-[50%]" title="Hour 7: 36 km/h avg"></div>
+<div class="flex-1 bg-surface-container-high hover:bg-primary rounded-t transition-colors h-[65%]" title="Hour 8: 41 km/h avg"></div>
+<div class="flex-1 bg-primary rounded-t h-[52%]" title="Live: 37 km/h avg"></div>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Geofence Departure Density</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Gate departures vs scheduled SLA slots</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">184 dispatches / hr</span>
+</div>
+<!-- Tiny SVG Sparkline for density -->
+<div class="mt-3 w-full">
+<svg class="w-full h-12 text-primary" fill="none" preserveAspectRatio="none" viewBox="0 0 300 40">
+<path d="M0,35 Q30,10 60,25 T120,8 T180,28 T240,12 T300,18" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M0,35 Q30,10 60,25 T120,8 T180,28 T240,12 T300,18 L300,40 L0,40 Z" fill="currentColor" fill-opacity="0.08"></path>
+</svg>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mt-1">
+<span class="">10:00</span>
+<span class="">11:00</span>
+<span class="">12:00</span>
+<span class="">13:00</span>
+<span class="font-bold text-on-surface">14:00 (Peak)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT SIDE PANEL: GEOFENCE INSPECTOR & DISPATCH SCHEDULER (4 of 12 cols on desktop) -->
+<div class="xl:col-span-4 flex flex-col gap-space-sm">
+<!-- Geofence Preview Card with static map and status overlay -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">hub</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Peenya Logistics Corridor</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary font-label-sm text-label-sm font-bold uppercase">Active Zone</span>
+</div>
+<!-- Google Static Map Component -->
+<div class="w-full h-44 bg-cover bg-center rounded-lg relative overflow-hidden shadow-inner flex flex-col justify-between p-2" data-location="Peenya Industrial Area, Bengaluru, India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBn7gHXSquUtw-N3fi3CdN89Xy8etImyPesTX38CCH4gEfeRZNPyDYTv7JqGxCF7sPbv9I3dYPxvsO-AJPspWs5hF2CSH32g93T8VEbUzmhsIEPIOFP5V9UUdysAETvOvrokVBZ-HJkZxa3jwpcCIvMOHa89NxoS-cZ-2YDGyHTiTzQ0hqFdO-h8FSsK5361i1MTiWnVHI2kYP9MqA9FPIPpu5kPZrrvIjWTGUtCrAA3gWNKPGiP6_qHA')">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur-sm font-telemetry-sm text-telemetry-sm text-on-surface font-bold">Zone ID: GF-PEE-04</span>
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-telemetry-sm text-telemetry-sm font-semibold">84 EVs Live</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-lowest/95 backdrop-blur-sm p-2 rounded">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold">Perimeter Area</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface font-semibold">14.2 km² (Poly-Hex)</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold">In-Transit SLA</span>
+<span class="font-telemetry-sm text-telemetry-sm text-tertiary font-semibold">99.2% Adherent</span>
+</div>
+</div>
+</div>
+<!-- Active Corridor Telemetry Constraints -->
+<div class="grid grid-cols-3 gap-2 p-2 rounded-lg bg-surface-container-low font-telemetry-sm text-telemetry-sm">
+<div class="flex flex-col text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Speed Cap</span>
+<span class="font-bold text-on-surface">45 km/h</span>
+</div>
+<div class="flex flex-col text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Max Idle</span>
+<span class="font-bold text-on-surface">15 mins</span>
+</div>
+<div class="flex flex-col text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Gate SoC</span>
+<span class="font-bold text-tertiary">&gt; 35%</span>
+</div>
+</div>
+</div>
+<!-- Critical Geofence Breach Override Box -->
+<div class="p-space-md rounded-xl bg-error-container/20 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-error">
+<span class="material-symbols-outlined text-[18px]">gpp_maybe</span>
+<span class="font-headline-sm text-headline-sm font-bold">Critical Geofence Breach</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-error font-bold">4m AGO</span>
+</div>
+<div class="flex flex-col gap-1 text-body-sm font-body-sm text-on-surface">
+<p class="leading-snug">
+            Vehicle <span class="font-telemetry-sm text-telemetry-sm font-bold text-primary">KA 03 MN 7821</span> breached designated <strong>Peenya Exit Gate 3</strong>.
+          </p>
+<span class="font-telemetry-sm text-telemetry-sm text-error font-medium">Deviation vector: +1.2 km North of designated arterial corridor.</span>
+</div>
+<div class="flex items-center gap-2 pt-1">
+<button class="flex-1 py-1.5 px-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md font-semibold transition-all" type="button">
+            Acknowledge
+          </button>
+<button class="flex-1 py-1.5 px-3 rounded-lg bg-error text-on-error hover:bg-on-error-container font-label-md text-label-md font-semibold shadow-sm transition-all flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">priority_high</span>
+            Push Alert to Driver
+          </button>
+</div>
+</div>
+<!-- Upcoming Automated Dispatches (Next 60 Mins) -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Automated Dispatches</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Scheduled for next 60 minutes</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm px-2 py-0.5 rounded bg-surface-container text-primary font-bold">8 Queued</span>
+</div>
+<div class="flex flex-col divide-y-0 space-y-2">
+<!-- Dispatch Item 1 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+</div>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">KA 04 EP 8812</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dock 04 → Hebbal Hub</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-primary">In 12m</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">SoC 92% Ready</span>
+</div>
+</div>
+<!-- Dispatch Item 2 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-secondary text-on-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">electric_rickshaw</span>
+</div>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">KA 53 TR 1190</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dock 07 → Indiranagar Ring</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-primary">In 24m</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">SoC 88% Ready</span>
+</div>
+</div>
+<!-- Dispatch Item 3 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-surface-container-highest text-on-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+</div>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface">MH 12 QW 3409</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dock 02 → Electronic City</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-on-surface-variant">In 41m</span>
+<span class="font-label-sm text-label-sm text-error font-semibold">Charging (62%)</span>
+</div>
+</div>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-primary font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1 mt-1" type="button">
+<span class="">Manage Full Dispatch Queue</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Active navigation indicator synchronization
+  document.addEventListener('DOMContentLoaded', () => {
+    const activeNav = document.querySelector('nav a[data-path="vehicles-and-trips"]');
+    if (activeNav) {
+      activeNav.classList.add('bg-primary', 'text-on-primary', 'font-semibold');
+      activeNav.classList.remove('text-on-surface-variant');
+    }
+
+    // Collapsible Sidebar Handler
+    const sidebar = document.getElementById('app-sidebar');
+    const mainContainer = document.getElementById('main-content-container');
+    const toggleBtn = document.getElementById('sidebar-toggle-btn');
+    const toggleIcon = document.getElementById('sidebar-toggle-icon');
+    let isCollapsed = false;
+
+    if (toggleBtn && sidebar && mainContainer) {
+      toggleBtn.addEventListener('click', () => {
+        isCollapsed = !isCollapsed;
+
+        if (isCollapsed) {
+          // Collapse sidebar to rail
+          sidebar.classList.remove('w-64');
+          sidebar.classList.add('w-16');
+          mainContainer.classList.remove('pl-64');
+          mainContainer.classList.add('pl-16');
+
+          // Change icon
+          toggleIcon.textContent = 'keyboard_double_arrow_right';
+          toggleBtn.setAttribute('aria-label', 'Expand sidebar');
+
+          // Hide text labels & badges
+          document.querySelectorAll('.sidebar-text').forEach(el => el.classList.add('hidden'));
+          document.querySelectorAll('.sidebar-label').forEach(el => el.classList.add('hidden'));
+
+          // Tighten padding for icon rail
+          document.querySelectorAll('.sidebar-section-pad').forEach(el => {
+            el.classList.remove('px-space-md');
+            el.classList.add('px-2');
+          });
+          const footerPad = document.querySelector('.sidebar-footer-pad');
+          if (footerPad) {
+            footerPad.classList.remove('p-space-md');
+            footerPad.classList.add('p-2');
+          }
+
+          // Center icons in nav links
+          document.querySelectorAll('#app-sidebar nav a').forEach(el => {
+            el.classList.remove('px-space-sm', 'justify-start');
+            el.classList.add('px-0', 'justify-center');
+          });
+
+          // Collapse org badge
+          const orgBadge = document.querySelector('.sidebar-org-badge');
+          if (orgBadge) {
+            orgBadge.classList.remove('p-2', 'justify-between');
+            orgBadge.classList.add('p-1.5', 'justify-center');
+          }
+        } else {
+          // Expand sidebar to full width
+          sidebar.classList.remove('w-16');
+          sidebar.classList.add('w-64');
+          mainContainer.classList.remove('pl-16');
+          mainContainer.classList.add('pl-64');
+
+          // Change icon
+          toggleIcon.textContent = 'keyboard_double_arrow_left';
+          toggleBtn.setAttribute('aria-label', 'Collapse sidebar');
+
+          // Show text labels & badges
+          document.querySelectorAll('.sidebar-text').forEach(el => el.classList.remove('hidden'));
+          document.querySelectorAll('.sidebar-label').forEach(el => el.classList.remove('hidden'));
+
+          // Restore normal padding
+          document.querySelectorAll('.sidebar-section-pad').forEach(el => {
+            el.classList.remove('px-2');
+            el.classList.add('px-space-md');
+          });
+          const footerPad = document.querySelector('.sidebar-footer-pad');
+          if (footerPad) {
+            footerPad.classList.remove('p-2');
+            footerPad.classList.add('p-space-md');
+          }
+
+          // Restore normal nav link layout
+          document.querySelectorAll('#app-sidebar nav a').forEach(el => {
+            el.classList.remove('px-0', 'justify-center');
+            el.classList.add('px-space-sm', 'justify-start');
+          });
+
+          // Restore org badge
+          const orgBadge = document.querySelector('.sidebar-org-badge');
+          if (orgBadge) {
+            orgBadge.classList.remove('p-1.5', 'justify-center');
+            orgBadge.classList.add('p-2', 'justify-between');
+          }
+        }
+      });
+    }
+  });
+</script></main></div>
+
+
+</body></html>
