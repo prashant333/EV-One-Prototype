@@ -289,7 +289,7 @@ export function UsersTab({
   users: OrgUser[]
   onChange: (next: OrgUser[]) => void
 }) {
-  const { can, roles } = useWorkspace()
+  const { can, allRoles } = useWorkspace()
   const canEdit = can('organization-settings', 'edit')
 
   const [query, setQuery] = useState('')
@@ -368,7 +368,9 @@ export function UsersTab({
               className="h-9 rounded-xl border border-outline-variant bg-surface-container-lowest px-space-sm"
             >
               <option value="all">All roles</option>
-              {roles.map((r) => (
+              {/* Every role, not just the active workspace's — a user in this
+                  directory may hold a role belonging to the other cluster. */}
+              {allRoles.map((r) => (
                 <option key={r.id} value={r.id}>
                   {r.name}
                 </option>

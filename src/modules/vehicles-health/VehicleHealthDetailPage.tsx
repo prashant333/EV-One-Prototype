@@ -8,23 +8,32 @@
 
 import { useState } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
-import { Area, AreaChart, Line, ResponsiveContainer, YAxis } from 'recharts'
+import {
+  Area,
+  CartesianGrid,
+  ComposedChart,
+  Line,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from 'recharts'
 import { ActionButton } from '@/components/ActionButton'
 import { EmptyState, Icon, Panel, PanelHeader, StatusBadge } from '@/components/primitives'
 import { useWorkspace } from '@/state/WorkspaceContext'
 import { getDriver, getVehicle, type Vehicle } from '@/data/fleet'
 import {
   ASSIGNED_DRIVER,
-  CAN_WAVEFORMS,
   CHARGING_SESSIONS,
   CHARGING_SUMMARY,
   COMPLETED_TRIPS,
   DIGITAL_TWIN,
   DTC_PANEL,
   LIVE_TRIP,
-  OSCILLOSCOPE_STATS,
   SCHEDULED_SERVICE,
-  SIGNAL_QUALITY,
+  SIGNAL_GROUPS,
+  SIGNAL_SAMPLES,
+  SIGNAL_WINDOW,
   SUBSYSTEM_CARDS,
   WORK_ORDERS,
 } from '@/data/health'
@@ -264,6 +273,185 @@ function SummaryCards({ vehicle }: { vehicle: Vehicle }) {
   )
 }
 
+// --- Telemetry oscilloscope --------------------------------------------------
+
+/**
+ * Multi-signal CAN scope. Each group shares a scale so the traces are directly
+ * comparable; groups mixing units get a second axis rather than being squashed
+ * onto one. ComposedChart is required — Area and Line siblings inside AreaChart
+ * are silently dropped by Recharts.
+ */
+function OscilloscopePanel() {
+  const [groupId, setGroupId] = useState(SIGNAL_GROUPS[0].id)
+  const group = SIGNAL_GROUPS.find((g) => g.id === groupId) ?? SIGNAL_GROUPS[0]
+
+  return (
+    <Panel className="xl:col-span-2">
+      <p className="font-label-sm text-label-sm uppercase tracking-wider text-primary">Telemetry Oscilloscope</p>
+
+      <div className="mb-space-sm flex flex-wrap items-start justify-between gap-space-sm">
+        <div>
+          <h3 className="font-headline-md text-headline-md font-semibold">{group.headline}</h3>
+          <p className="font-body-sm text-body-sm text-on-surface-variant">{group.description}</p>
+        </div>
+        <span className="font-telemetry-sm text-telemetry-sm rounded-lg bg-surface-container-low px-2 py-1 text-on-surface-variant">
+          Last 15m
+        </span>
+      </div>
+
+      {/* Signal group selector */}
+      <div className="mb-space-md flex flex-wrap items-center gap-space-xs rounded-xl bg-surface-container-low p-1">
+        {SIGNAL_GROUPS.map((g) => (
+          <button
+            key={g.id}
+            type="button"
+            onClick={() => setGroupId(g.id)}
+            className={`font-body-sm text-body-sm flex items-center gap-1.5 whitespace-nowrap rounded-lg px-space-md py-1.5 transition-colors ${
+              g.id === groupId
+                ? 'bg-surface-container-lowest font-semibold text-primary shadow-level-1'
+                : 'text-on-surface-variant hover:text-on-surface'
+            }`}
+          >
+            <Icon name={g.icon} className="text-[16px]" />
+            {g.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Live value chips */}
+      <div className="mb-space-sm flex flex-wrap gap-space-xs">
+        {group.series.map((s) => (
+          <span
+            key={s.key}
+            className="font-telemetry-sm text-telemetry-sm flex items-center gap-1.5 rounded-lg bg-surface-container-low px-2 py-1"
+          >
+            <span className="h-1.5 w-1.5 rounded-pill" style={{ background: s.color }} />
+            <span className="text-on-surface-variant">{s.label}</span>
+            <span className="font-semibold text-on-surface">{s.current}</span>
+          </span>
+        ))}
+      </div>
+
+      <div className="rounded-xl border border-outline-variant/40 bg-surface-container-low p-space-sm">
+        <div className="font-telemetry-sm text-telemetry-sm mb-1 flex justify-between text-outline">
+          <span>{SIGNAL_WINDOW.start}</span>
+          {SIGNAL_WINDOW.marks.map((m) => (
+            <span key={m} className="hidden sm:inline">
+              {m}
+            </span>
+          ))}
+          <span>{SIGNAL_WINDOW.end}</span>
+        </div>
+
+        <div className="h-[240px]">
+          <ResponsiveContainer width="100%" height="100%">
+            <ComposedChart data={SIGNAL_SAMPLES} margin={{ top: 6, right: 4, left: -18, bottom: 0 }}>
+              <defs>
+                {group.series
+                  .filter((s) => s.render === 'area')
+                  .map((s) => (
+                    <linearGradient key={s.key} id={`fill-${group.id}-${s.key}`} x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor={s.color} stopOpacity={0.24} />
+                      <stop offset="100%" stopColor={s.color} stopOpacity={0.02} />
+                    </linearGradient>
+                  ))}
+              </defs>
+
+              <CartesianGrid stroke="#e2e7ff" vertical={false} />
+
+              <XAxis
+                dataKey="t"
+                tick={{ fontSize: 9, fill: '#747686', fontFamily: 'JetBrains Mono' }}
+                tickLine={false}
+                axisLine={false}
+                interval={11}
+              />
+
+              <YAxis
+                yAxisId="left"
+                domain={group.left.domain}
+                tick={{ fontSize: 9, fill: '#747686', fontFamily: 'JetBrains Mono' }}
+                tickLine={false}
+                axisLine={false}
+                width={46}
+              />
+              {group.right && (
+                <YAxis
+                  yAxisId="right"
+                  orientation="right"
+                  domain={group.right.domain}
+                  tick={{ fontSize: 9, fill: '#747686', fontFamily: 'JetBrains Mono' }}
+                  tickLine={false}
+                  axisLine={false}
+                  width={46}
+                />
+              )}
+
+              <Tooltip
+                contentStyle={{ borderRadius: 8, border: '1px solid #c4c5d7', fontFamily: 'Inter', fontSize: 12 }}
+                labelFormatter={(v) => `T+${v}`}
+                formatter={(value: number, name: string) => {
+                  const s = group.series.find((x) => x.label === name)
+                  return [`${value} ${s?.unit ?? ''}`, name]
+                }}
+              />
+
+              {group.series.map((s) =>
+                s.render === 'area' ? (
+                  <Area
+                    key={s.key}
+                    yAxisId={s.axis}
+                    type="monotone"
+                    dataKey={s.key}
+                    name={s.label}
+                    stroke={s.color}
+                    strokeWidth={2}
+                    fill={`url(#fill-${group.id}-${s.key})`}
+                    isAnimationActive={false}
+                  />
+                ) : (
+                  <Line
+                    key={s.key}
+                    yAxisId={s.axis}
+                    type="monotone"
+                    dataKey={s.key}
+                    name={s.label}
+                    stroke={s.color}
+                    strokeWidth={1.75}
+                    strokeDasharray={s.dashed ? '4 3' : undefined}
+                    dot={false}
+                    isAnimationActive={false}
+                  />
+                ),
+              )}
+            </ComposedChart>
+          </ResponsiveContainer>
+        </div>
+
+        <div className="font-telemetry-sm text-telemetry-sm mt-1 flex flex-wrap items-center justify-between gap-space-sm text-outline">
+          <span>{group.scaleNote}</span>
+          <span className="flex items-center gap-1.5 text-state-ok">
+            <span className="h-1.5 w-1.5 rounded-pill bg-state-ok" />
+            {group.qualityNote}
+          </span>
+        </div>
+      </div>
+
+      <p className="font-telemetry-sm text-telemetry-sm mt-space-xs text-outline">{SIGNAL_WINDOW.resolution}</p>
+
+      <div className="mt-space-md grid grid-cols-1 gap-space-sm sm:grid-cols-3">
+        {group.stats.map((s) => (
+          <div key={s.label} className="rounded-xl border border-outline-variant/40 bg-surface-container-low p-space-sm">
+            <p className="font-label-sm text-label-sm uppercase text-outline">{s.label}</p>
+            <p className="font-telemetry-md text-telemetry-md tnum font-semibold text-on-surface">{s.value}</p>
+            <p className="font-body-sm text-body-sm text-on-surface-variant">{s.caption}</p>
+          </div>
+        ))}
+      </div>
+    </Panel>
+  )
+}
+
 // --- Tab: Health & Diagnostics ----------------------------------------------
 
 function DiagnosticsTab() {
@@ -294,97 +482,7 @@ function DiagnosticsTab() {
       </div>
 
       <div className="grid grid-cols-1 gap-space-md xl:grid-cols-3">
-        <Panel className="xl:col-span-2">
-          <p className="font-label-sm text-label-sm uppercase tracking-wider text-primary">
-            Telemetry Oscilloscope
-          </p>
-          <div className="mb-space-md flex flex-wrap items-center justify-between gap-space-sm">
-            <h3 className="font-headline-md text-headline-md font-semibold">
-              CAN High-Frequency Waveforms (Last 15m)
-            </h3>
-            <div className="flex flex-wrap gap-space-xs">
-              {[
-                { label: OSCILLOSCOPE_STATS.busVoltage, color: 'bg-primary' },
-                { label: OSCILLOSCOPE_STATS.motorRpm, color: 'bg-secondary' },
-                { label: OSCILLOSCOPE_STATS.torque, color: 'bg-state-ok' },
-              ].map((s) => (
-                <span
-                  key={s.label}
-                  className="font-telemetry-sm text-telemetry-sm flex items-center gap-1.5 rounded-lg bg-surface-container-low px-2 py-1"
-                >
-                  <span className={`h-1.5 w-1.5 rounded-pill ${s.color}`} />
-                  {s.label}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="rounded-xl border border-outline-variant/40 bg-surface-container-low p-space-sm">
-            <div className="font-telemetry-sm text-telemetry-sm mb-1 flex justify-between text-outline">
-              <span>14:00:00</span>
-              <span>14:03:45</span>
-              <span>14:07:30</span>
-              <span>14:11:15</span>
-              <span>14:15:00 (NOW)</span>
-            </div>
-
-            <div className="h-[220px]">
-              <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={CAN_WAVEFORMS} margin={{ top: 4, right: 0, left: 0, bottom: 0 }}>
-                  <defs>
-                    <linearGradient id="canFill" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#0037b0" stopOpacity={0.22} />
-                      <stop offset="100%" stopColor="#0037b0" stopOpacity={0.02} />
-                    </linearGradient>
-                  </defs>
-                  <YAxis hide domain={[0, 110]} />
-                  <Area
-                    type="monotone"
-                    dataKey="busVoltage"
-                    stroke="#0037b0"
-                    strokeWidth={2}
-                    fill="url(#canFill)"
-                    isAnimationActive={false}
-                  />
-                  <Line
-                    type="monotone"
-                    dataKey="motorRpm"
-                    stroke="#4b41e1"
-                    strokeWidth={1.75}
-                    dot={false}
-                    isAnimationActive={false}
-                  />
-                  <Line
-                    type="monotone"
-                    dataKey="torque"
-                    stroke="#004f35"
-                    strokeWidth={1.75}
-                    dot={false}
-                    isAnimationActive={false}
-                  />
-                </AreaChart>
-              </ResponsiveContainer>
-            </div>
-
-            <div className="font-telemetry-sm text-telemetry-sm mt-1 flex flex-wrap items-center justify-between gap-space-sm text-outline">
-              <span>{OSCILLOSCOPE_STATS.scale}</span>
-              <span className="flex items-center gap-1.5 text-state-ok">
-                <span className="h-1.5 w-1.5 rounded-pill bg-state-ok" />
-                {OSCILLOSCOPE_STATS.stability}
-              </span>
-            </div>
-          </div>
-
-          <div className="mt-space-md grid grid-cols-1 gap-space-sm sm:grid-cols-3">
-            {SIGNAL_QUALITY.map((s) => (
-              <div key={s.label} className="rounded-xl border border-outline-variant/40 bg-surface-container-low p-space-sm">
-                <p className="font-label-sm text-label-sm uppercase text-outline">{s.label}</p>
-                <p className="font-telemetry-md text-telemetry-md tnum font-semibold text-on-surface">{s.value}</p>
-                <p className="font-body-sm text-body-sm text-on-surface-variant">{s.caption}</p>
-              </div>
-            ))}
-          </div>
-        </Panel>
+        <OscilloscopePanel />
 
         <div className="flex flex-col gap-space-md">
           <Panel>

@@ -24,8 +24,12 @@ just labels:
 1. **Workspace switcher** (top bar, next to the logo) — switch between B2B Fleet,
    Last-Mile Mobility and Vehicle OEM. The navigation rail, the KPI strip and the
    dashboard panels all change, because the PRD's module matrix withholds
-   Geofencing, Routes/Trips and Hubs from Vehicle OEM. Cluster 2 (Asset
-   Intelligence & Finance) is listed but disabled — out of scope for this build.
+   Geofencing, Routes/Trips and Hubs from Vehicle OEM.
+
+   The **Assets & Finance** workspace is live: switching to a Cluster 2 segment
+   swaps the entire rail (Battery Health, Battery Lifecycle, Swap Stations…),
+   changes the dashboard, and moves you to that cluster's default role, since a
+   fleet role carries no permissions there.
 
 2. **Role switcher** (top bar, far right) — switch between Org Admin, Operations
    Lead, Hub Supervisor, Maintenance Technician and Read-only Auditor. Modules
@@ -36,8 +40,11 @@ just labels:
 3. **Customize KPIs** (dashboard) — 5 of 16 metrics are displayed. Swap them.
    Changing segment restores that segment's defaults.
 
-**Organization & Settings** shows both matrices side by side — module-by-segment
-and permission-by-role — so the access model is inspectable without reading code.
+**Organization & Settings** has two tabs: a permission-by-role matrix, and a user
+directory where each person's asset grant is editable.
+
+The PRD publishes a module matrix for Cluster 1 only (page 4). Cluster 2's gating
+is a working proposal, documented inline in `platform.ts` above the module list.
 
 ## Architecture
 
@@ -49,6 +56,8 @@ src/
     fleet.ts       Vehicles, drivers, trips, hubs, alerts, chart series
     health.ts      Health KPIs, FOTA rollout, per-vehicle detail records
     charging.ts    Depots, charging sessions, depot power curve, port mix
+    batteries.ts   Battery portfolio, SoH distribution, pack detail (Cluster 2)
+    users.ts       Organisation user directory and per-user asset grants
     driverAnalytics.ts  Per-driver scorecards, coaching queue, tier bands
     kpis.ts        16-metric catalogue + per-segment defaults
   state/
@@ -76,8 +85,16 @@ Two rules keep the prototype honest:
 | Vehicles and Health | Built to the delivered design (roster + detail, 5 tabs) |
 | Charging Sessions | Built to the delivered design (+ inspector sheet, remote-charge modal) |
 | Driver Analytics | Built to the delivered design (roster + selected-driver panel) |
-| Organization & Settings | Built (RBAC matrices) |
+| Organization & Settings | Built (roles matrix + users directory) |
 | All other Cluster 1 modules | Routable stubs marked *Design Pending* |
+
+### Cluster 2 — Assets & Finance
+
+| Module | State |
+|---|---|
+| Dashboard (Assets & Finance) | Built (no design supplied — composed from the design system) |
+| Battery Health | Built to the delivered design (portfolio + pack detail) |
+| All other Cluster 2 modules | Routable stubs marked *Design Pending* |
 
 **Vehicles and Health** is the one two-page module: `/vehicles-health` is the
 fleet roster and `/vehicles-health/:vehicleId` the individual record. Clicking a

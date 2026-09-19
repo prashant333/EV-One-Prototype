@@ -3,20 +3,86 @@
  * expansive flex canvas. Route content renders into the canvas via <Outlet/>.
  */
 
-import { useState, type ReactNode } from 'react'
-import { Outlet, useNavigate } from 'react-router-dom'
+import { useEffect, useState, type ReactNode } from 'react'
+import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { TopBar } from './TopBar'
 import { Sidebar } from './Sidebar'
 import { Icon } from '@/components/primitives'
 import { useWorkspace } from '@/state/WorkspaceContext'
+import { MODULES } from '@/data/platform'
+
+/**
+ * Keeps the open page and the active workspace in step.
+ *
+ * Every module has a route regardless of cluster, so switching from Fleet &
+ * Mobility to Assets & Finance while sitting on, say, Schedule and Trips would
+ * otherwise leave that screen rendered inside a workspace that does not grant
+ * it. The same applies when a role change removes access to the current module.
+ */
+function useModuleGuard() {
+  const { visibleModules } = useWorkspace()
+  const { pathname } = useLocation()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    // Match the module owning this path, including its drill-down routes
+    // (e.g. /battery-health/BAT-8821 belongs to the Battery Health module).
+    const owner = MODULES.find((m) => pathname === m.route || pathname.startsWith(`${m.route}/`))
+    if (!owner) return
+
+    const permitted = visibleModules.some((m) => m.id === owner.id)
+    // Never bounce away from the dashboard itself — that is the redirect target.
+    if (!permitted && owner.id !== 'dashboard') {
+      navigate('/dashboard', { replace: true })
+    }
+  }, [pathname, visibleModules, navigate])
+}
 
 export function AppShell() {
-  const [collapsed, setCollapsed] = useState(false)
+  useModuleGuard()
+
+  /**
+   * The rail starts collapsed and expands on hover. The chevron pins it open
+   * for anyone who prefers the labels permanently visible.
+   */
+  const [collapsed, setCollapsed] = useState(true)
+  /** Transient hover/focus expansion while the rail is pinned collapsed. */
+  const [peeking, setPeeking] = useState(false)
+
+  /**
+   * Leaving the window never fires mouseleave, so a hover latched while
+   * switching away would still be set on return. Clear it whenever the page is
+   * backgrounded or the window loses focus.
+   */
+  useEffect(() => {
+    const clear = () => setPeeking(false)
+    const onVisibility = () => {
+      if (document.visibilityState === 'hidden') clear()
+    }
+    window.addEventListener('blur', clear)
+    document.addEventListener('visibilitychange', onVisibility)
+    return () => {
+      window.removeEventListener('blur', clear)
+      document.removeEventListener('visibilitychange', onVisibility)
+    }
+  }, [])
+
+  const expanded = !collapsed || peeking
+  // Expanding on hover floats over the canvas instead of pushing it, so the
+  // page does not reflow every time the cursor crosses the rail.
+  const overlay = collapsed && peeking
 
   return (
     <div className="min-h-screen bg-surface">
       <TopBar />
-      <Sidebar collapsed={collapsed} onToggle={() => setCollapsed((v) => !v)} />
+      <Sidebar
+        expanded={expanded}
+        pinnedOpen={!collapsed}
+        overlay={overlay}
+        onToggle={() => setCollapsed((v) => !v)}
+        onPeekChange={setPeeking}
+      />
+      {/* Padding follows the pinned width only — never the hover state. */}
       <div className={`transition-all duration-300 ${collapsed ? 'pl-16' : 'pl-64'}`}>
         <main className="min-h-screen w-full px-space-md pb-space-2xl pt-16">
           <Outlet />

@@ -109,7 +109,7 @@ function WorkspaceSwitcher() {
                 <span className="font-body-sm text-body-sm font-semibold text-on-surface">{c.name}</span>
                 {!c.available && (
                   <span className="font-label-sm text-label-sm rounded-lg bg-surface-container px-1.5 py-0.5 uppercase text-outline">
-                    Cluster 2 · Placeholder
+                    Workspace 2 · Placeholder
                   </span>
                 )}
               </div>

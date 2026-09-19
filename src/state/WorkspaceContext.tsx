@@ -17,7 +17,17 @@ import {
   type PlatformModule,
   type SegmentId,
 } from '@/data/platform'
-import { ROLES, canEdit, canView, getRole, permissionFor, type PermissionLevel, type Role } from '@/data/roles'
+import {
+  DEFAULT_ROLE_BY_CLUSTER,
+  ROLES,
+  canEdit,
+  canView,
+  getRole,
+  permissionFor,
+  rolesForCluster,
+  type PermissionLevel,
+  type Role,
+} from '@/data/roles'
 import { DEFAULT_KPIS } from '@/data/kpis'
 
 interface ScopeFilters {
@@ -39,7 +49,10 @@ interface WorkspaceValue {
   roleBlockedModules: PlatformModule[]
   scope: ScopeFilters
   selectedKpis: string[]
+  /** Roles meaningful in the active workspace — drives the role switcher. */
   roles: Role[]
+  /** Every role in the org, regardless of workspace. */
+  allRoles: Role[]
 
   setSegment: (id: SegmentId) => void
   setRole: (id: string) => void
@@ -66,11 +79,27 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
   const segment = getSegment(segmentId)
   const cluster = getCluster(segment.cluster)
 
-  /** Switching segment also swaps in that segment's default KPI set. */
-  const setSegment = useCallback((id: SegmentId) => {
-    setSegmentId(id)
-    setSelectedKpis(DEFAULT_KPIS[id])
-  }, [])
+  /**
+   * Switching segment swaps in that segment's default KPI set, and — if the
+   * active role does not serve the target cluster — moves to that cluster's
+   * default role. Without this, crossing into Assets & Finance as an Operations
+   * Lead would leave every module hidden and the rail empty.
+   */
+  const setSegment = useCallback(
+    (id: SegmentId) => {
+      setSegmentId(id)
+      setSelectedKpis(DEFAULT_KPIS[id])
+
+      const targetCluster = getSegment(id).cluster
+      setRoleId((current) => {
+        const currentRole = getRole(current)
+        return currentRole.clusters.includes(targetCluster)
+          ? current
+          : DEFAULT_ROLE_BY_CLUSTER[targetCluster]
+      })
+    },
+    [],
+  )
 
   const setScope = useCallback((patch: Partial<ScopeFilters>) => {
     setScopeState((prev) => ({ ...prev, ...patch }))
@@ -110,7 +139,8 @@ export function WorkspaceProvider({ children }: { children: ReactNode }) {
     roleBlockedModules,
     scope,
     selectedKpis,
-    roles: ROLES,
+    roles: rolesForCluster(cluster.id),
+    allRoles: ROLES,
     setSegment,
     setRole: setRoleId,
     setScope,

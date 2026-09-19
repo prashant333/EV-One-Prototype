@@ -111,7 +111,7 @@ export const DRIVER_KPIS: DriverKpi[] = [
   },
   {
     id: 'harsh-accel',
-    label: 'Harsh Accel',
+    label: 'Harsh Acceleration',
     icon: 'speed',
     value: '0.38',
     unit: '/100km',

@@ -7,7 +7,7 @@
  */
 
 import { NavLink } from 'react-router-dom'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { NAV_GROUP_LABELS, type NavGroup, type PlatformModule } from '@/data/platform'
 import { useWorkspace } from '@/state/WorkspaceContext'
 import { Icon } from '@/components/primitives'
@@ -50,15 +50,72 @@ function NavItem({ module, collapsed }: { module: PlatformModule; collapsed: boo
   )
 }
 
-export function Sidebar({ collapsed, onToggle }: { collapsed: boolean; onToggle: () => void }) {
+export function Sidebar({
+  expanded,
+  pinnedOpen,
+  overlay,
+  onToggle,
+  onPeekChange,
+}: {
+  /** Current visual state — open either because it is pinned or hovered. */
+  expanded: boolean
+  /** The user's pinned choice, which the footer chevron toggles. */
+  pinnedOpen: boolean
+  /** True while open purely from hover, so it floats above the canvas. */
+  overlay: boolean
+  onToggle: () => void
+  onPeekChange: (peeking: boolean) => void
+}) {
   const { visibleModules, roleBlockedModules, segment, role } = useWorkspace()
   const [showBlocked, setShowBlocked] = useState(false)
 
+  /**
+   * Tracks whether the last interaction was keyboard traversal. Focus alone
+   * cannot be trusted to expand the rail: after clicking a nav item that link
+   * keeps DOM focus, so returning from another browser tab re-fires focus and
+   * would expand the rail with no cursor near it.
+   */
+  const keyboardNav = useRef(false)
+
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Tab') keyboardNav.current = true
+    }
+    const onPointerDown = () => {
+      keyboardNav.current = false
+    }
+    // Leaving the window also clears it, so a restored focus on return is not
+    // mistaken for deliberate keyboard navigation.
+    const onLeaveWindow = () => {
+      keyboardNav.current = false
+    }
+
+    document.addEventListener('keydown', onKeyDown, true)
+    document.addEventListener('mousedown', onPointerDown, true)
+    window.addEventListener('blur', onLeaveWindow)
+    return () => {
+      document.removeEventListener('keydown', onKeyDown, true)
+      document.removeEventListener('mousedown', onPointerDown, true)
+      window.removeEventListener('blur', onLeaveWindow)
+    }
+  }, [])
+
+  const collapsed = !expanded
+
   return (
     <aside
-      className={`fixed bottom-0 left-0 top-16 z-30 flex flex-col justify-between overflow-y-auto overflow-x-hidden border-r border-outline-variant/30 bg-surface-container-lowest transition-all duration-300 ${
+      onMouseEnter={() => onPeekChange(true)}
+      onMouseLeave={() => onPeekChange(false)}
+      // Expand on keyboard traversal only — see the keyboardNav note above.
+      onFocusCapture={() => {
+        if (keyboardNav.current) onPeekChange(true)
+      }}
+      onBlurCapture={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node | null)) onPeekChange(false)
+      }}
+      className={`fixed bottom-0 left-0 top-16 flex flex-col justify-between overflow-y-auto overflow-x-hidden border-r border-outline-variant/30 bg-surface-container-lowest transition-all duration-300 ${
         collapsed ? 'w-16' : 'w-64'
-      }`}
+      } ${overlay ? 'z-40 shadow-level-3' : 'z-30'}`}
     >
       <div className="flex flex-col gap-space-lg py-space-md">
         {GROUP_ORDER.map((group) => {
@@ -165,15 +222,17 @@ export function Sidebar({ collapsed, onToggle }: { collapsed: boolean; onToggle:
               Support
             </button>
           )}
+          {/* Reflects the PINNED state, not the hover state — while peeking at a
+              collapsed rail, clicking this pins it open. */}
           <button
             type="button"
             onClick={onToggle}
-            aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-            title={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+            aria-label={pinnedOpen ? 'Collapse sidebar' : 'Pin sidebar open'}
+            title={pinnedOpen ? 'Collapse sidebar' : 'Pin sidebar open'}
             className="flex items-center justify-center rounded-xl p-1 text-on-surface-variant transition-colors hover:bg-surface-container hover:text-on-surface"
           >
             <Icon
-              name={collapsed ? 'keyboard_double_arrow_right' : 'keyboard_double_arrow_left'}
+              name={pinnedOpen ? 'keyboard_double_arrow_left' : 'keyboard_double_arrow_right'}
               className="text-[18px]"
             />
           </button>

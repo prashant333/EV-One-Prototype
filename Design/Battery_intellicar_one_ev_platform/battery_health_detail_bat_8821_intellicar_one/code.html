@@ -1,0 +1,742 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface": "#131b2e", "on-primary-fixed-variant": "#0039b5", "surface-tint": "#2151da", "error-container": "#ffdad6", "surface-container": "#eaedff", "tertiary-fixed-dim": "#68dba9", "background": "#faf8ff", "outline-variant": "#c4c5d7", "surface-variant": "#dae2fd", "on-background": "#131b2e", "primary": "#0037b0", "surface-container-high": "#e2e7ff", "primary-fixed-dim": "#b7c4ff", "on-primary-fixed": "#001551", "surface-container-highest": "#dae2fd", "surface": "#faf8ff", "secondary-container": "#645efb", "on-error": "#ffffff", "on-tertiary-fixed-variant": "#005137", "secondary-fixed": "#e2dfff", "surface-dim": "#d2d9f4", "surface-bright": "#faf8ff", "on-secondary-fixed-variant": "#3323cc", "on-secondary": "#ffffff", "inverse-primary": "#b7c4ff", "surface-container-lowest": "#ffffff", "secondary-fixed-dim": "#c3c0ff", "inverse-on-surface": "#eef0ff", "tertiary-container": "#006948", "on-secondary-fixed": "#0f0069", "inverse-surface": "#283044", "tertiary": "#004f35", "outline": "#747686", "on-primary-container": "#cad3ff", "on-tertiary": "#ffffff", "on-secondary-container": "#fffbff", "on-tertiary-container": "#76eab6", "tertiary-fixed": "#85f8c4", "surface-container-low": "#f2f3ff", "secondary": "#4b41e1", "on-error-container": "#93000a", "on-primary": "#ffffff", "error": "#ba1a1a", "primary-container": "#1d4ed8", "on-tertiary-fixed": "#002114", "on-surface-variant": "#434655", "primary-fixed": "#dce1ff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-sm": "0.5rem", "margin-desktop": "1.5rem", "space-lg": "1rem", "space-2xl": "2rem", "space-xl": "1.5rem", "margin": "1rem", "space-2xs": "0.125rem", "gutter-desktop": "1.5rem", "space-xs": "0.25rem", "space-md": "0.75rem", "gutter": "1rem" }, "fontFamily": { "headline-sm": ["Inter"], "telemetry-sm": ["JetBrains Mono"], "headline-xl-mobile": ["Inter"], "telemetry-lg": ["JetBrains Mono"], "label-md": ["Inter"], "headline-lg": ["Inter"], "label-sm": ["Inter"], "body-md": ["Inter"], "headline-xl": ["Inter"], "telemetry-md": ["JetBrains Mono"], "body-sm": ["Inter"], "headline-md": ["Inter"], "body-lg": ["Inter"] }, "fontSize": { "headline-sm": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "telemetry-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0em", "fontWeight": "500" }], "headline-xl-mobile": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "telemetry-lg": ["1.5rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.025em", "fontWeight": "600" }], "headline-lg": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.05em", "fontWeight": "600" }], "body-md": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0em", "fontWeight": "400" }], "headline-xl": ["2rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.025em", "fontWeight": "700" }], "telemetry-md": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "-0.01em", "fontWeight": "500" }], "body-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-lg": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-lowest border-r border-outline-variant/30 z-30 flex flex-col justify-between overflow-y-auto overflow-x-hidden transition-all duration-300 ease-in-out group" id="app-sidebar"><div class="py-space-md flex flex-col gap-space-lg"><div class="px-space-md group-[.collapsed]:px-2"><nav class="space-y-1" data-active-classes="bg-primary text-on-primary font-semibold"><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="dashboard" href="#" title="Dashboard"><span class="material-symbols-outlined text-[18px] shrink-0">home</span><span class="truncate group-[.collapsed]:hidden">Dashboard</span></a><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="assets-registry" href="#" title="Assets Registry"><span class="material-symbols-outlined text-[18px] shrink-0">database</span><span class="truncate group-[.collapsed]:hidden">Assets Registry</span></a><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="live-tracking" href="#" title="Live Tracking"><span class="material-symbols-outlined text-[18px] shrink-0">map</span><span class="truncate group-[.collapsed]:hidden">Live Tracking</span></a></nav></div><div class="px-space-md group-[.collapsed]:px-2"><div class="flex items-center justify-between px-space-sm group-[.collapsed]:px-0 group-[.collapsed]:justify-center py-1.5 mb-space-xs rounded bg-surface-container-high/60"><span class="text-primary font-label-sm text-label-sm uppercase font-bold tracking-wider truncate group-[.collapsed]:hidden">Workspace: Assets &amp; Finance</span><span class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span></div><nav class="space-y-1" data-active-classes="bg-primary text-on-primary font-semibold"><a aria-current="page" class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg transition-colors bg-primary text-on-primary font-semibold shadow-xs font-body-sm text-body-sm" data-path="battery-health" href="#" title="Battery Health"><span class="material-symbols-outlined text-[18px] shrink-0">battery_charging_full</span><span class="truncate group-[.collapsed]:hidden">Battery Health</span></a><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="battery-lifecycle" href="#" title="Battery Lifecycle"><span class="material-symbols-outlined text-[18px] shrink-0">published_with_changes</span><span class="truncate group-[.collapsed]:hidden">Battery Lifecycle</span></a><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="swap-stations" href="#" title="Swap Stations"><span class="material-symbols-outlined text-[18px] shrink-0">ev_station</span><span class="truncate group-[.collapsed]:hidden">Swap Stations</span></a><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="swap-sessions" href="#" title="Swap Sessions"><span class="material-symbols-outlined text-[18px] shrink-0">sync_alt</span><span class="truncate group-[.collapsed]:hidden">Swap Sessions</span></a><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="asset-tracking" href="#" title="Asset Tracking"><span class="material-symbols-outlined text-[18px] shrink-0">fmd_good</span><span class="truncate group-[.collapsed]:hidden">Asset Tracking</span></a><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="finance-and-leasing" href="#" title="Finance &amp; Leasing"><span class="material-symbols-outlined text-[18px] shrink-0">payments</span><span class="truncate group-[.collapsed]:hidden">Finance &amp; Leasing</span></a><a class="flex items-center justify-between group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm relative" data-path="asset-risk" href="#" title="Asset Risk (14)"><div class="flex items-center gap-space-sm group-[.collapsed]:gap-0"><span class="material-symbols-outlined text-[18px] shrink-0">warning</span><span class="truncate group-[.collapsed]:hidden">Asset Risk</span></div><span class="px-1.5 py-0.5 rounded-full bg-error-container text-on-error-container font-telemetry-sm text-[11px] font-bold group-[.collapsed]:hidden">14</span><span class="hidden group-[.collapsed]:block absolute top-1.5 right-2 w-2 h-2 rounded-full bg-error"></span></a><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="collections-and-payments" href="#" title="Collections &amp; Payments"><span class="material-symbols-outlined text-[18px] shrink-0">receipt_long</span><span class="truncate group-[.collapsed]:hidden">Collections &amp; Payments</span></a><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="asset-valuation" href="#" title="Asset Valuation"><span class="material-symbols-outlined text-[18px] shrink-0">monitoring</span><span class="truncate group-[.collapsed]:hidden">Asset Valuation</span></a><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="maintenance-and-warranty" href="#" title="Maintenance &amp; Warranty"><span class="material-symbols-outlined text-[18px] shrink-0">build_circle</span><span class="truncate group-[.collapsed]:hidden">Maintenance &amp; Warranty</span></a></nav></div><div class="px-space-md group-[.collapsed]:px-2"><div class="px-space-sm group-[.collapsed]:px-0 group-[.collapsed]:text-center py-1.5 mb-space-xs rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase font-bold tracking-wider truncate group-[.collapsed]:hidden">Intelligence &amp; Analytics</div><div class="hidden group-[.collapsed]:block h-px bg-outline-variant/30 my-2 mx-1"></div><nav class="space-y-1" data-active-classes="bg-primary text-on-primary font-semibold"><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="predictive-degradation" href="#" title="Predictive Degradation"><span class="material-symbols-outlined text-[18px] shrink-0">timeline</span><span class="truncate group-[.collapsed]:hidden">Predictive Degradation</span></a><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="reports-and-compliance" href="#" title="Reports &amp; Compliance"><span class="material-symbols-outlined text-[18px] shrink-0">bar_chart</span><span class="truncate group-[.collapsed]:hidden">Reports &amp; Compliance</span></a></nav></div><div class="px-space-md group-[.collapsed]:px-2 mt-auto"><div class="px-space-sm group-[.collapsed]:px-0 group-[.collapsed]:text-center py-1.5 mb-space-xs rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase font-bold tracking-wider truncate group-[.collapsed]:hidden">System &amp; Settings</div><div class="hidden group-[.collapsed]:block h-px bg-outline-variant/30 my-2 mx-1"></div><nav class="space-y-1" data-active-classes="bg-primary text-on-primary font-semibold"><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="oem-integrations-and-apis" href="#" title="OEM Integrations &amp; APIs"><span class="material-symbols-outlined text-[18px] shrink-0">hub</span><span class="truncate group-[.collapsed]:hidden">OEM Integrations &amp; APIs</span></a><a class="flex items-center gap-space-sm group-[.collapsed]:justify-center px-space-sm group-[.collapsed]:px-0 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="warranty-governance-and-rules" href="#" title="Warranty Governance &amp; Rules"><span class="material-symbols-outlined text-[18px] shrink-0">verified_user</span><span class="truncate group-[.collapsed]:hidden">Warranty Governance &amp; Rules</span></a></nav></div></div><div class="p-space-md group-[.collapsed]:p-2 border-t border-outline-variant/30 flex flex-col gap-space-xs bg-surface-container-low/50"><div class="flex items-center justify-between group-[.collapsed]:justify-center p-2 rounded bg-surface-container-lowest border border-outline-variant/40" title="ABC Mobility - Pro Tier"><div class="flex items-center gap-2 overflow-hidden"><span class="material-symbols-outlined text-primary text-[18px] shrink-0">verified</span><div class="flex flex-col truncate group-[.collapsed]:hidden"><span class="font-body-sm text-body-sm font-semibold truncate text-on-surface">ABC Mobility</span><span class="font-label-sm text-label-sm text-primary font-bold uppercase">Pro Tier</span></div></div><span class="material-symbols-outlined text-on-surface-variant text-[16px] group-[.collapsed]:hidden">unfold_more</span></div><div class="flex items-center justify-between group-[.collapsed]:justify-center pt-space-xs"><button class="flex items-center gap-1.5 text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors group-[.collapsed]:hidden" title="Support" type="button"><span class="material-symbols-outlined text-[16px]">contact_support</span><span class="">Support</span></button><button aria-label="Toggle sidebar" class="p-1 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors flex items-center justify-center" id="sidebar-toggle-btn" title="Collapse sidebar" type="button"><span class="material-symbols-outlined text-[18px] transition-transform duration-300" id="sidebar-toggle-icon">keyboard_double_arrow_left</span></button></div></div></aside><header class="fixed top-0 left-0 right-0 h-16 bg-surface-container-lowest z-40 flex items-center justify-between px-space-md border-b border-outline-variant/30 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center gap-space-sm"><img alt="Intellicar One Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WQLuILNnMpHUxZn_K5NJPnaBXV58WX8qHGhFqIGAhBzANlVV1HK25pPUNQ5kAr42CUM_s-OGmn4PiE1jVXSdtybOlk_vf8Npwur9za3wc_v3UE-TjJXOrEsXHRRsLWlFKJQXY6WlG_RSAL_DUkUwFLpYv3BEqInavC8rxurIxfArXf9A8aDMzT2F5SBBSZkcHC9hj9DllRoisaC9UtqpkGYH0qSQpmkoaXXuw5UqnO9XpHt_OTxoVxjbv6"><div class="flex flex-col leading-none"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-bold">INTELLICAR<span class="text-primary font-bold ml-1">ONE</span></span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Enterprise Telemetry</span></div></div><div class="h-6 w-px bg-outline-variant/50 mx-space-2xs"></div><div class="relative group"><button class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors text-left" type="button"><div class="w-2 h-2 rounded-full bg-primary"></div><div class="flex flex-col leading-tight"><span class="font-label-sm text-label-sm font-semibold uppercase text-primary tracking-wider">Workspace</span><span class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1">Assets &amp; Finance<span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span></span></div></button></div></div><div class="flex items-center gap-space-sm flex-1 max-w-4xl mx-space-md"><div class="flex items-center bg-surface-container-low px-space-sm py-1 rounded-lg border border-outline-variant/40 gap-space-xs text-on-surface-variant font-body-sm text-body-sm shrink-0"><div class="flex items-center gap-1 cursor-pointer hover:text-on-surface"><span class="font-label-sm text-label-sm uppercase font-semibold text-outline">Reg:</span><span class="">Bengaluru Hub</span><span class="material-symbols-outlined text-[14px]">arrow_drop_down</span></div><div class="h-3 w-px bg-outline-variant/60"></div><div class="flex items-center gap-1 cursor-pointer hover:text-on-surface"><span class="font-label-sm text-label-sm uppercase font-semibold text-outline">Site:</span><span class="">All Hubs &amp; Swap Stations</span><span class="material-symbols-outlined text-[14px]">arrow_drop_down</span></div><div class="h-3 w-px bg-outline-variant/60"></div><div class="flex items-center gap-1 cursor-pointer hover:text-on-surface"><span class="font-label-sm text-label-sm uppercase font-semibold text-outline">Time:</span><span class="font-telemetry-sm text-telemetry-sm text-primary font-medium">24h</span><span class="material-symbols-outlined text-[14px]">arrow_drop_down</span></div></div><div class="relative flex-1 min-w-[240px]"><span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full h-9 pl-9 pr-12 rounded-lg bg-surface-container-low border border-outline-variant/40 text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="Search battery ID, vehicle, station, pack serial, VIN (⌘K)..." type="text"><kbd class="absolute right-space-sm top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded bg-surface-container border border-outline-variant/60 font-telemetry-sm text-telemetry-sm text-on-surface-variant">⌘K</kbd></div></div><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-md bg-tertiary-fixed/20 text-tertiary font-telemetry-sm text-telemetry-sm font-semibold"><span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span><span class="">14.2k msg/s</span></div><div class="flex items-center gap-space-xs"><button aria-label="Alerts" class="relative p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 flex items-center justify-center min-w-[16px] h-4 px-1 rounded-full bg-error text-on-error font-telemetry-sm text-[10px] font-bold">18</span></button><button aria-label="Documentation" class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">help</span></button></div><div class="h-6 w-px bg-outline-variant/50"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden 2xl:flex flex-col leading-tight"><span class="font-body-sm text-body-sm font-semibold text-on-surface">Rahul Sharma</span><span class="font-label-sm text-label-sm text-on-surface-variant">Fleet &amp; Asset Lead</span></div></div></div></header><div class="pl-64 transition-all duration-300 ease-in-out" id="main-content-layout"><main class="w-full pt-16 bg-surface px-space-gutter-desktop min-h-screen"><div class="flex flex-col w-full pb-space-2xl space-y-space-lg text-on-surface">
+<!-- Breadcrumb & Critical Alert Ribbon -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-space-md">
+<div class="flex items-center gap-space-xs font-label-md text-outline flex-wrap">
+<a class="hover:text-primary transition-colors" href="#">Workspaces</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Assets &amp; Finance</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Battery Health</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-semibold">BAT-8821 (Pack-99824)</span>
+</div>
+<!-- Live Ingestion Heartbeat -->
+<div class="flex items-center gap-space-sm self-start sm:self-auto">
+<span class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs rounded-lg bg-surface-container-high text-on-surface-variant font-telemetry-sm text-xs">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+<span class="">CAN Telemetry: 1000ms sync</span>
+</span>
+<span class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs rounded-lg bg-error-container text-on-error-container font-telemetry-sm text-xs font-semibold">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+<span class="">Action Required</span>
+</span>
+</div>
+</div>
+<!-- Primary Header & Command Banner -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col xl:flex-row xl:items-center justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs min-w-0">
+<div class="flex items-center gap-space-md flex-wrap">
+<h1 class="font-headline-lg text-on-surface font-bold tracking-tight">BAT-8821</h1>
+<span class="px-space-sm py-space-2xs rounded-lg bg-surface-container text-primary font-label-sm uppercase tracking-wider">NMC Chemistry (622)</span>
+<span class="px-space-sm py-space-2xs rounded-lg bg-error-container text-on-error-container font-label-sm uppercase tracking-wider font-semibold flex items-center gap-space-2xs">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+          Critical Risk · Quarantine Recommended
+        </span>
+<span class="px-space-sm py-space-2xs rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm">Class 7 Commercial EV</span>
+</div>
+<p class="font-body-md text-outline">Tata AutoComp NMC 48V 100Ah · Commercial EV Pack · Battery Assets Division</p>
+<!-- Technical Meta Strip -->
+<div class="flex items-center gap-x-space-md gap-y-space-xs flex-wrap pt-space-xs text-xs font-telemetry-sm text-on-surface-variant">
+<div><span class="text-outline">Serial: </span><span class="font-semibold text-on-surface">TC-NMC-48100-B0912</span></div>
+<span class="text-outline-variant">•</span>
+<div><span class="text-outline">BMS FW: </span><span class="font-semibold text-on-surface">v4.2.1-bms</span></div>
+<span class="text-outline-variant">•</span>
+<div><span class="text-outline">Commissioned: </span><span class="font-semibold text-on-surface">14 Oct 2023</span></div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-space-2xs">
+<span class="text-outline">Assigned: </span>
+<span class="font-semibold text-primary underline cursor-pointer">Tata Ace EV (MH 12 AB 4321)</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div><span class="text-outline">Hub: </span><span class="font-semibold text-on-surface">Koramangala Hub #03</span></div>
+<span class="text-outline-variant">•</span>
+<div><span class="text-outline">Depot Bay: </span><span class="font-semibold text-on-surface">Bay #03</span></div>
+</div>
+</div>
+<!-- Action Bar -->
+<div class="flex items-center gap-space-sm flex-wrap xl:flex-nowrap justify-start xl:justify-end">
+<button class="px-space-md h-9 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface text-xs font-label-md font-semibold transition-colors flex items-center gap-space-xs shadow-sm">
+<span class="material-symbols-outlined text-[16px]">directions_car</span>
+<span class="">Vehicle</span>
+</button>
+<button class="px-space-md h-9 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface text-xs font-label-md font-semibold transition-colors flex items-center gap-space-xs shadow-sm">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+<span class="">MDF4 Log</span>
+</button>
+<button class="px-space-md h-9 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface text-xs font-label-md font-semibold transition-colors flex items-center gap-space-xs shadow-sm">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span class="">Export</span>
+</button>
+<button class="px-space-md h-9 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-error text-xs font-label-md font-semibold transition-colors flex items-center gap-space-xs shadow-sm">
+<span class="material-symbols-outlined text-[16px]">build_circle</span>
+<span class="">Create Ticket</span>
+</button>
+<button class="px-space-md h-9 rounded-lg bg-error text-on-error hover:bg-on-error-container text-xs font-label-md font-semibold transition-colors flex items-center gap-space-xs shadow-sm">
+<span class="material-symbols-outlined text-[16px]">drive_file_rename_outline</span>
+<span class="">Take Offline</span>
+</button>
+</div>
+</div>
+<!-- Snapshot KPI Array (5 Pillars) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-space-md">
+<!-- 1. SoH Metric -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm uppercase tracking-wider text-outline">State of Health (SoH)</span>
+<span class="px-space-2xs py-0.5 rounded-sm bg-error-container text-on-error-container font-telemetry-sm text-[10px] font-bold">CRITICAL</span>
+</div>
+<div class="my-space-sm flex items-baseline gap-space-xs">
+<span class="font-telemetry-lg text-headline-xl font-bold text-error">71.2%</span>
+<span class="font-telemetry-sm text-xs text-error font-medium flex items-center">
+<span class="material-symbols-outlined text-[14px]">arrow_downward</span>4.8% (60d)
+        </span>
+</div>
+<div class="space-y-space-2xs">
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden flex">
+<div class="bg-error h-full rounded-full" style="width: 71.2%"></div>
+</div>
+<div class="flex justify-between text-[10px] font-telemetry-sm text-outline">
+<span class="">Warranty Min: 70.0%</span>
+<span class="text-error font-bold">+1.2% delta</span>
+</div>
+</div>
+</div>
+<!-- 2. SoC Metric -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm uppercase tracking-wider text-outline">State of Charge (SoC)</span>
+<span class="material-symbols-outlined text-primary text-[18px]">battery_charging_full</span>
+</div>
+<div class="my-space-sm flex items-baseline gap-space-xs">
+<span class="font-telemetry-lg text-headline-xl font-bold text-on-surface">72.4%</span>
+<span class="font-telemetry-sm text-xs text-outline">@ 51.2V</span>
+</div>
+<div class="space-y-space-2xs">
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 72.4%"></div>
+</div>
+<div class="flex justify-between text-[10px] font-telemetry-sm text-on-surface-variant">
+<span class="">34.8 kWh usable</span>
+<span class="text-outline">48.0 kWh nom</span>
+</div>
+</div>
+</div>
+<!-- 3. Cycle Count & Retention -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm uppercase tracking-wider text-outline">Cycle Count (EFC)</span>
+<span class="material-symbols-outlined text-outline text-[18px]">refresh</span>
+</div>
+<div class="my-space-sm flex items-baseline gap-space-xs">
+<span class="font-telemetry-lg text-headline-xl font-bold text-on-surface">1,140</span>
+<span class="font-telemetry-sm text-xs text-outline">/ 2,500</span>
+</div>
+<div class="space-y-space-2xs">
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 45.6%"></div>
+</div>
+<div class="flex justify-between text-[10px] font-telemetry-sm text-on-surface-variant">
+<span class="">45.6% Life Consumed</span>
+<span class="text-outline">1,360 left</span>
+</div>
+</div>
+</div>
+<!-- 4. Thermal Status -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm uppercase tracking-wider text-outline">Max Pack Temp</span>
+<span class="material-symbols-outlined text-error text-[18px]">thermostat</span>
+</div>
+<div class="my-space-sm flex items-baseline gap-space-xs">
+<span class="font-telemetry-lg text-headline-xl font-bold text-error">48.5°C</span>
+<span class="font-telemetry-sm text-xs text-error font-medium">Peak: 54.2°C</span>
+</div>
+<div class="space-y-space-2xs">
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden flex">
+<div class="bg-surface-tint h-full" style="width: 50%"></div>
+<div class="bg-error h-full" style="width: 30%"></div>
+</div>
+<div class="flex justify-between text-[10px] font-telemetry-sm text-on-surface-variant">
+<span class="">Loop ΔT: +4.8°C</span>
+<span class="text-error font-bold">HOT ZONE</span>
+</div>
+</div>
+</div>
+<!-- 5. Estimated RUL -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm uppercase tracking-wider text-outline">Rem. Useful Life (RUL)</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">hourglass_bottom</span>
+</div>
+<div class="my-space-sm flex items-baseline gap-space-xs">
+<span class="font-telemetry-lg text-headline-xl font-bold text-on-surface">1.8 yrs</span>
+<span class="font-telemetry-sm text-xs text-error font-medium">≈ 620 cyc</span>
+</div>
+<div class="space-y-space-2xs">
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-on-surface-variant h-full rounded-full" style="width: 24%"></div>
+</div>
+<div class="flex justify-between text-[10px] font-telemetry-sm text-on-surface-variant">
+<span class="">Trajectory to 70% SoH</span>
+<span class="text-error font-bold">Fast Drift</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Workspace Sub-Navigation Tabs -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-xs flex items-center gap-space-xs overflow-x-auto text-xs font-label-md">
+<button class="px-space-md py-space-sm rounded-lg bg-primary-container text-on-primary-container font-bold flex items-center gap-space-xs whitespace-nowrap">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span class="">Overview</span>
+</button>
+<button class="px-space-md py-space-sm rounded-lg hover:bg-surface-container-low text-on-surface-variant font-medium flex items-center gap-space-xs whitespace-nowrap transition-colors">
+<span class="material-symbols-outlined text-[16px]">show_chart</span>
+<span class="">Telemetry &amp; Oscilloscope</span>
+</button>
+<button class="px-space-md py-space-sm rounded-lg hover:bg-surface-container-low text-on-surface-variant font-medium flex items-center gap-space-xs whitespace-nowrap transition-colors">
+<span class="material-symbols-outlined text-[16px]">psychology</span>
+<span class="">Degradation &amp; AI Models</span>
+</button>
+<button class="px-space-md py-space-sm rounded-lg hover:bg-surface-container-low text-on-surface-variant font-medium flex items-center gap-space-xs whitespace-nowrap transition-colors">
+<span class="material-symbols-outlined text-[16px]">grid_view</span>
+<span class="">Cell Diagnostics</span>
+</button>
+<button class="px-space-md py-space-sm rounded-lg hover:bg-surface-container-low text-on-surface-variant font-medium flex items-center gap-space-xs whitespace-nowrap transition-colors">
+<span class="material-symbols-outlined text-[16px]">sync_alt</span>
+<span class="">Usage &amp; Swaps</span>
+</button>
+<button class="px-space-md py-space-sm rounded-lg hover:bg-surface-container-low text-on-surface-variant font-medium flex items-center gap-space-xs whitespace-nowrap transition-colors">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="">Warranty &amp; Claims</span>
+</button>
+<button class="px-space-md py-space-sm rounded-lg hover:bg-surface-container-low text-on-surface-variant font-medium flex items-center gap-space-xs whitespace-nowrap transition-colors">
+<span class="material-symbols-outlined text-[16px]">notifications_active</span>
+<span class="">Alerts &amp; Audit</span>
+<span class="px-1.5 py-0.2 rounded-full bg-error-container text-on-error-container text-[10px] font-bold font-telemetry-sm">8</span>
+</button>
+<button class="px-space-md py-space-sm rounded-lg hover:bg-surface-container-low text-on-surface-variant font-medium flex items-center gap-space-xs whitespace-nowrap transition-colors">
+<span class="material-symbols-outlined text-[16px]">eco</span>
+<span class="">Lifecycle &amp; 2nd Life</span>
+</button>
+</div>
+<!-- Primary Layout: Left Specs (40%) & Right BMS Matrix (60%) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left 40%: Specifications & Asset Details (5 cols) -->
+<div class="lg:col-span-5 space-y-space-md">
+<!-- System Specs Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">settings_input_component</span>
+</div>
+<h2 class="font-headline-sm text-sm font-bold text-on-surface">Battery Architecture &amp; Rating</h2>
+</div>
+<span class="font-telemetry-sm text-[11px] text-tertiary font-semibold flex items-center gap-space-2xs">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> OEM Validated
+          </span>
+</div>
+<div class="divide-y-0 space-y-space-xs text-xs font-body-md">
+<div class="flex justify-between py-space-xs px-space-sm rounded-lg bg-surface-container-low">
+<span class="text-outline">Topology / Arrangement</span>
+<span class="font-telemetry-sm font-semibold text-on-surface">14S 3P Pouch (NMC 622)</span>
+</div>
+<div class="flex justify-between py-space-xs px-space-sm rounded-lg">
+<span class="text-outline">Nominal / Operating Voltage</span>
+<span class="font-telemetry-sm font-semibold text-on-surface">51.8 V (42.0V - 58.8V)</span>
+</div>
+<div class="flex justify-between py-space-xs px-space-sm rounded-lg bg-surface-container-low">
+<span class="text-outline">Rated Capacity vs Current</span>
+<span class="font-telemetry-sm font-semibold text-on-surface">48.0 kWh → <span class="text-error">34.2 kWh</span></span>
+</div>
+<div class="flex justify-between py-space-xs px-space-sm rounded-lg">
+<span class="text-outline">Lifetime Capacity Loss</span>
+<span class="font-telemetry-sm font-semibold text-error">-13.8 kWh (-28.8%)</span>
+</div>
+<div class="flex justify-between py-space-xs px-space-sm rounded-lg bg-surface-container-low">
+<span class="text-outline">Internal Resistance (IR)</span>
+<span class="font-telemetry-sm font-semibold text-error">38.4 mΩ (<span class="font-bold">↑ +24%</span> from 31.0)</span>
+</div>
+<div class="flex justify-between py-space-xs px-space-sm rounded-lg">
+<span class="text-outline">OEM Manufacturer</span>
+<span class="font-body-md font-semibold text-on-surface">Tata AutoComp Systems Ltd</span>
+</div>
+<div class="flex justify-between py-space-xs px-space-sm rounded-lg bg-surface-container-low">
+<span class="text-outline">Manufacturing Date</span>
+<span class="font-telemetry-sm font-semibold text-on-surface">12 Aug 2023 (Pune Plant)</span>
+</div>
+<div class="flex justify-between py-space-xs px-space-sm rounded-lg">
+<span class="text-outline">Last Swap Station</span>
+<span class="font-body-md font-semibold text-on-surface">Koramangala Hub #02</span>
+</div>
+<div class="flex justify-between py-space-xs px-space-sm rounded-lg bg-surface-container-low">
+<span class="text-outline">Last Swapped Timestamp</span>
+<span class="font-telemetry-sm font-semibold text-on-surface">18 Sep 2024, 09:14 AM</span>
+</div>
+</div>
+</div>
+<!-- Vehicle Association & Telemetry Node -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+</div>
+<h2 class="font-headline-sm text-sm font-bold text-on-surface">Assigned Platform Telematics</h2>
+</div>
+<span class="px-space-xs py-0.5 rounded-sm bg-surface-container-high text-on-surface-variant font-telemetry-sm text-[10px]">OBD-II Online</span>
+</div>
+<div class="flex items-center gap-space-md p-space-sm bg-surface-container-low rounded-lg">
+<img class="w-16 h-12 object-cover rounded-md bg-surface-container" data-alt="Tata Ace EV commercial delivery electric mini-truck side profile studio shot clean white background high technical clarity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVmaq3d4x4uPvN3kmfGNOD585Up5enCHD3GyI4kfqh8R4BsQXmnWNmffZVk3lPijO7fW8zAca_ph4dnoNYZ1SN0dNfSNxyOAO-70P9TM0MS4zP0w5vhONZfXev7zzmpxdgRhelpZpmB83ms_waqoI6Jor2B6sxpXiR2Bo1gip_vMXdwaM3UwvRrE1l1aZh-sOnr1ArShL8ubc9gl-p5VLIuUQbVcNlHrE9P_eQFJCKJiTUYtgH2e7xTA">
+<div class="min-w-0 flex-1">
+<div class="font-body-md font-bold text-sm text-on-surface truncate">Tata Ace EV · Van #14</div>
+<div class="font-telemetry-sm text-xs text-outline truncate">VIN: MAT622089P3K9910</div>
+<div class="font-telemetry-sm text-[11px] text-tertiary mt-0.5">Speed: 42 km/h · Odo: 38,410 km</div>
+</div>
+</div>
+<!-- Telemetry Ingestion Metrics -->
+<div class="grid grid-cols-2 gap-space-xs text-xs font-telemetry-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low">
+<span class="text-outline text-[10px] uppercase block">Bus Load</span>
+<span class="text-on-surface font-semibold text-sm">62.4%</span>
+<span class="text-tertiary text-[10px] block">0 packet drops</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low">
+<span class="text-outline text-[10px] uppercase block">BMS Temp Sensors</span>
+<span class="text-on-surface font-semibold text-sm">3 / 3 Live</span>
+<span class="text-outline text-[10px] block">NTC 10k thermistors</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right 60%: BMS Cell Matrix & Diagnostics (7 cols) -->
+<div class="lg:col-span-7 space-y-space-md">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-md">
+<!-- BMS Header & Alert Trigger -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-xs">
+<div>
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-sm text-base font-bold text-on-surface">BMS 14-Cell Voltage &amp; Thermal Matrix</h2>
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+</div>
+<p class="font-body-sm text-xs text-outline">Real-time individual cell telemetry reported via TI BQ79616-Q1 BMS chip</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<div class="px-space-sm py-1 rounded-lg bg-error-container text-on-error-container text-xs font-telemetry-sm font-bold flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">crisis_alert</span>
+<span class="">ΔV: 92 mV (Max: 30mV)</span>
+</div>
+</div>
+</div>
+<!-- Metric Callouts (Min/Max/Balance) -->
+<div class="grid grid-cols-3 gap-space-sm text-center">
+<div class="p-space-sm rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-[10px] uppercase text-outline block">Min Cell Voltage</span>
+<span class="font-telemetry-md text-sm font-bold text-error">3.48 V</span>
+<span class="text-[10px] font-telemetry-sm text-outline block">Cell #14 (Severely Low)</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-[10px] uppercase text-outline block">Max Cell Voltage</span>
+<span class="font-telemetry-md text-sm font-bold text-tertiary">3.57 V</span>
+<span class="text-[10px] font-telemetry-sm text-outline block">Cell #02 (Nominal)</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-[10px] uppercase text-outline block">Balancing State</span>
+<span class="font-telemetry-md text-sm font-bold text-secondary">Active Shunt</span>
+<span class="text-[10px] font-telemetry-sm text-outline block">Bleeding Cell 01-13</span>
+</div>
+</div>
+<!-- 14-Cell Interactive Visual Matrix Bar Graph -->
+<div class="space-y-space-xs pt-space-xs">
+<div class="flex justify-between items-center text-xs font-label-md text-outline">
+<span class="">Cell Voltage Spectrum (3.40V - 3.65V Floor-Ceiling)</span>
+<span class="font-telemetry-sm text-error">Cell #14 Divergent</span>
+</div>
+<!-- Cell Bars Grid -->
+<div class="grid grid-cols-7 sm:grid-cols-14 gap-space-2xs h-36 items-end bg-surface-container-low p-space-sm rounded-xl">
+<!-- Cell 01 -->
+<div class="flex flex-col items-center h-full justify-end group cursor-pointer">
+<span class="font-telemetry-sm text-[9px] text-outline mb-1 opacity-0 group-hover:opacity-100 transition-opacity">3.56V</span>
+<div class="w-full bg-tertiary-container rounded-t-sm transition-all group-hover:brightness-110" style="height: 76%"></div>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant font-semibold mt-1">C01</span>
+</div>
+<!-- Cell 02 -->
+<div class="flex flex-col items-center h-full justify-end group cursor-pointer">
+<span class="font-telemetry-sm text-[9px] text-outline mb-1 opacity-0 group-hover:opacity-100 transition-opacity">3.57V</span>
+<div class="w-full bg-tertiary-container rounded-t-sm transition-all group-hover:brightness-110" style="height: 80%"></div>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant font-semibold mt-1">C02</span>
+</div>
+<!-- Cell 03 -->
+<div class="flex flex-col items-center h-full justify-end group cursor-pointer">
+<span class="font-telemetry-sm text-[9px] text-outline mb-1 opacity-0 group-hover:opacity-100 transition-opacity">3.56V</span>
+<div class="w-full bg-tertiary-container rounded-t-sm transition-all group-hover:brightness-110" style="height: 76%"></div>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant font-semibold mt-1">C03</span>
+</div>
+<!-- Cell 04 -->
+<div class="flex flex-col items-center h-full justify-end group cursor-pointer">
+<span class="font-telemetry-sm text-[9px] text-outline mb-1 opacity-0 group-hover:opacity-100 transition-opacity">3.57V</span>
+<div class="w-full bg-tertiary-container rounded-t-sm transition-all group-hover:brightness-110" style="height: 80%"></div>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant font-semibold mt-1">C04</span>
+</div>
+<!-- Cell 05 -->
+<div class="flex flex-col items-center h-full justify-end group cursor-pointer">
+<span class="font-telemetry-sm text-[9px] text-outline mb-1 opacity-0 group-hover:opacity-100 transition-opacity">3.56V</span>
+<div class="w-full bg-tertiary-container rounded-t-sm transition-all group-hover:brightness-110" style="height: 76%"></div>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant font-semibold mt-1">C05</span>
+</div>
+<!-- Cell 06 -->
+<div class="flex flex-col items-center h-full justify-end group cursor-pointer">
+<span class="font-telemetry-sm text-[9px] text-outline mb-1 opacity-0 group-hover:opacity-100 transition-opacity">3.55V</span>
+<div class="w-full bg-tertiary-container rounded-t-sm transition-all group-hover:brightness-110" style="height: 72%"></div>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant font-semibold mt-1">C06</span>
+</div>
+<!-- Cell 07 -->
+<div class="flex flex-col items-center h-full justify-end group cursor-pointer">
+<span class="font-telemetry-sm text-[9px] text-outline mb-1 opacity-0 group-hover:opacity-100 transition-opacity">3.56V</span>
+<div class="w-full bg-tertiary-container rounded-t-sm transition-all group-hover:brightness-110" style="height: 76%"></div>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant font-semibold mt-1">C07</span>
+</div>
+<!-- Cell 08 -->
+<div class="flex flex-col items-center h-full justify-end group cursor-pointer">
+<span class="font-telemetry-sm text-[9px] text-outline mb-1 opacity-0 group-hover:opacity-100 transition-opacity">3.57V</span>
+<div class="w-full bg-tertiary-container rounded-t-sm transition-all group-hover:brightness-110" style="height: 80%"></div>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant font-semibold mt-1">C08</span>
+</div>
+<!-- Cell 09 -->
+<div class="flex flex-col items-center h-full justify-end group cursor-pointer">
+<span class="font-telemetry-sm text-[9px] text-outline mb-1 opacity-0 group-hover:opacity-100 transition-opacity">3.56V</span>
+<div class="w-full bg-tertiary-container rounded-t-sm transition-all group-hover:brightness-110" style="height: 76%"></div>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant font-semibold mt-1">C09</span>
+</div>
+<!-- Cell 10 -->
+<div class="flex flex-col items-center h-full justify-end group cursor-pointer">
+<span class="font-telemetry-sm text-[9px] text-outline mb-1 opacity-0 group-hover:opacity-100 transition-opacity">3.55V</span>
+<div class="w-full bg-tertiary-container rounded-t-sm transition-all group-hover:brightness-110" style="height: 72%"></div>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant font-semibold mt-1">C10</span>
+</div>
+<!-- Cell 11 -->
+<div class="flex flex-col items-center h-full justify-end group cursor-pointer">
+<span class="font-telemetry-sm text-[9px] text-outline mb-1 opacity-0 group-hover:opacity-100 transition-opacity">3.56V</span>
+<div class="w-full bg-tertiary-container rounded-t-sm transition-all group-hover:brightness-110" style="height: 76%"></div>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant font-semibold mt-1">C11</span>
+</div>
+<!-- Cell 12 -->
+<div class="flex flex-col items-center h-full justify-end group cursor-pointer">
+<span class="font-telemetry-sm text-[9px] text-outline mb-1 opacity-0 group-hover:opacity-100 transition-opacity">3.56V</span>
+<div class="w-full bg-tertiary-container rounded-t-sm transition-all group-hover:brightness-110" style="height: 76%"></div>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant font-semibold mt-1">C12</span>
+</div>
+<!-- Cell 13 -->
+<div class="flex flex-col items-center h-full justify-end group cursor-pointer">
+<span class="font-telemetry-sm text-[9px] text-outline mb-1 opacity-0 group-hover:opacity-100 transition-opacity">3.55V</span>
+<div class="w-full bg-tertiary-container rounded-t-sm transition-all group-hover:brightness-110" style="height: 72%"></div>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant font-semibold mt-1">C13</span>
+</div>
+<!-- Cell 14 (Degraded Cell) -->
+<div class="flex flex-col items-center h-full justify-end group cursor-pointer">
+<span class="font-telemetry-sm text-[9px] text-error font-bold mb-1 opacity-100">3.48V</span>
+<div class="w-full bg-error rounded-t-sm shadow-md animate-pulse" style="height: 42%"></div>
+<span class="font-telemetry-sm text-[9px] text-error font-bold mt-1">C14</span>
+</div>
+</div>
+</div>
+<!-- Temperature Sensor Strip -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm text-xs font-telemetry-sm">
+<span class="text-outline font-label-sm uppercase">Thermistor Probe Array:</span>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-2xs">
+<span class="text-outline">T1 (Front Module):</span>
+<span class="text-on-surface font-semibold">46.2°C</span>
+</div>
+<div class="flex items-center gap-space-2xs">
+<span class="text-outline">T2 (Center Hotspot):</span>
+<span class="text-error font-bold">48.5°C</span>
+</div>
+<div class="flex items-center gap-space-2xs">
+<span class="text-outline">T3 (Rear Cooling Entry):</span>
+<span class="text-on-surface font-semibold">44.1°C</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Telemetry Oscilloscope Section (Full Width) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-md">
+<!-- Oscilloscope Controls Header -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pb-space-xs">
+<div>
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-sm text-base font-bold text-on-surface">CAN Bus High-Frequency Telemetry Oscilloscope</h2>
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-primary font-telemetry-sm text-[10px]">10 Hz Sample</span>
+</div>
+<p class="font-body-sm text-xs text-outline">Synchronized multi-channel physical metrics capturing drive acceleration, regen surges, and thermal inertia</p>
+</div>
+<!-- Controls & Range -->
+<div class="flex items-center gap-space-md flex-wrap">
+<!-- Parameter Toggles -->
+<div class="flex items-center gap-space-sm text-xs font-label-md">
+<label class="flex items-center gap-space-2xs cursor-pointer">
+<input checked="" class="rounded-sm text-primary" type="checkbox">
+<span class="text-primary font-semibold">Voltage (V)</span>
+</label>
+<label class="flex items-center gap-space-2xs cursor-pointer">
+<input checked="" class="rounded-sm text-secondary" type="checkbox">
+<span class="text-secondary font-semibold">Current (A)</span>
+</label>
+<label class="flex items-center gap-space-2xs cursor-pointer">
+<input checked="" class="rounded-sm text-error" type="checkbox">
+<span class="text-error font-semibold">Pack Temp (°C)</span>
+</label>
+<label class="flex items-center gap-space-2xs cursor-pointer">
+<input checked="" class="rounded-sm text-tertiary" type="checkbox">
+<span class="text-tertiary font-semibold">Power (kW)</span>
+</label>
+</div>
+<!-- Range Pills -->
+<div class="flex items-center bg-surface-container-low p-space-2xs rounded-lg text-xs font-label-md">
+<button class="px-space-sm py-1 rounded hover:text-on-surface text-outline transition-colors">1H</button>
+<button class="px-space-sm py-1 rounded hover:text-on-surface text-outline transition-colors">6H</button>
+<button class="px-space-sm py-1 rounded bg-surface-container-lowest font-bold text-primary shadow-sm">24H</button>
+<button class="px-space-sm py-1 rounded hover:text-on-surface text-outline transition-colors">7D</button>
+<button class="px-space-sm py-1 rounded hover:text-on-surface text-outline transition-colors">30D</button>
+</div>
+</div>
+</div>
+<!-- Live Multi-Waveform SVG Oscilloscope Chart -->
+<div class="relative w-full h-64 bg-surface-container-low rounded-xl p-space-md overflow-hidden">
+<!-- Axis Legend / Watermark Labels -->
+<div class="absolute top-space-sm left-space-md z-10 flex gap-space-md text-[10px] font-telemetry-sm">
+<span class="text-primary font-bold">V_PACK: 46.2V - 53.4V</span>
+<span class="text-secondary font-bold">I_LOAD: -84A (Regen) to +112A (Peak)</span>
+<span class="text-error font-bold">T_MAX: 48.5°C</span>
+<span class="text-tertiary font-bold">P_NET: 5.8 kW</span>
+</div>
+<!-- Vector Oscilloscope Canvas -->
+<svg class="w-full h-full" fill="none" preserveAspectRatio="none" viewBox="0 0 1000 240">
+<!-- Faint Grid System -->
+<line stroke="#CBD5E1" stroke-dasharray="4 4" stroke-opacity="0.3" x1="0" x2="1000" y1="40" y2="40"></line>
+<line stroke="#CBD5E1" stroke-dasharray="4 4" stroke-opacity="0.3" x1="0" x2="1000" y1="90" y2="90"></line>
+<line stroke="#CBD5E1" stroke-dasharray="4 4" stroke-opacity="0.3" x1="0" x2="1000" y1="140" y2="140"></line>
+<line stroke="#CBD5E1" stroke-dasharray="4 4" stroke-opacity="0.3" x1="0" x2="1000" y1="190" y2="190"></line>
+<line stroke="#CBD5E1" stroke-opacity="0.2" x1="250" x2="250" y1="0" y2="240"></line>
+<line stroke="#CBD5E1" stroke-opacity="0.2" x1="500" x2="500" y1="0" y2="240"></line>
+<line stroke="#CBD5E1" stroke-opacity="0.2" x1="750" x2="750" y1="0" y2="240"></line>
+<!-- Temp Curve (Red: Climbs smoothly from 38C to 48.5C) -->
+<path d="M 0,180 C 180,175 320,160 500,130 C 680,100 840,75 1000,60" fill="none" stroke="#BA1A1A" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Voltage Waveform (Primary Blue: dips under load, bounces back) -->
+<path d="M 0,80 L 80,82 L 140,70 L 190,145 L 230,130 L 290,75 L 360,85 L 420,165 L 460,95 L 530,90 L 610,185 L 670,110 L 740,72 L 810,130 L 880,85 L 940,90 L 1000,82" fill="none" stroke="#0037B0" stroke-linejoin="round" stroke-width="2"></path>
+<!-- Current Waveform (Secondary Indigo: high dynamic swings and negative regen spikes) -->
+<path d="M 0,140 L 70,140 L 120,60 L 160,195 L 210,140 L 280,140 L 340,45 L 390,215 L 440,140 L 520,140 L 590,30 L 640,225 L 700,140 L 780,50 L 840,190 L 910,140 L 1000,140" fill="none" opacity="0.85" stroke="#4B41E1" stroke-dasharray="1 0" stroke-linejoin="round" stroke-width="1.8"></path>
+<!-- Power Area / Regenerative surge marker at timestamp index -->
+<circle cx="640" cy="225" fill="#BA1A1A" r="4"></circle>
+<circle cx="590" cy="30" fill="#006948" r="4"></circle>
+</svg>
+<!-- Dynamic Hover Readout Pill -->
+<div class="absolute bottom-space-sm right-space-md bg-surface-container-lowest/90 backdrop-blur-md px-space-md py-space-xs rounded-lg shadow-sm flex items-center gap-space-md text-xs font-telemetry-sm">
+<div><span class="text-outline">Timestamp: </span><span class="font-bold text-on-surface">14:28:11.450</span></div>
+<div><span class="text-outline">Discharge Spike: </span><span class="text-secondary font-bold">+112.4 A</span></div>
+<div><span class="text-outline">Sag: </span><span class="text-primary font-bold">46.2 V</span></div>
+<div><span class="text-outline">Regen Peak: </span><span class="text-tertiary font-bold">-84.0 A</span></div>
+</div>
+</div>
+</div>
+<!-- Degradation Trajectory, Warranty & Operational Stress (Two Columns) -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+<!-- Left: Lifecycle & Warranty Milestones -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-lg flex flex-col justify-between">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+</div>
+<h2 class="font-headline-sm text-sm font-bold text-on-surface">Lifecycle Milestones &amp; Warranty Gate</h2>
+</div>
+<span class="px-space-sm py-space-2xs rounded-lg bg-tertiary-fixed text-on-tertiary-fixed font-telemetry-sm text-xs font-semibold">Claim Eligible</span>
+</div>
+<!-- Horizontal Step Lifecycle Progress -->
+<div class="space-y-space-xs">
+<div class="text-xs font-label-md text-outline">Pack Lifecycle Phase</div>
+<div class="grid grid-cols-6 gap-space-2xs text-[10px] font-telemetry-sm text-center">
+<div class="space-y-1">
+<div class="h-2 rounded-full bg-tertiary"></div>
+<span class="text-outline block truncate">Mfg 08/23</span>
+</div>
+<div class="space-y-1">
+<div class="h-2 rounded-full bg-tertiary"></div>
+<span class="text-outline block truncate">Comm 10/23</span>
+</div>
+<div class="space-y-1">
+<div class="h-2 rounded-full bg-error animate-pulse"></div>
+<span class="text-error font-bold block truncate">Active Crit</span>
+</div>
+<div class="space-y-1">
+<div class="h-2 rounded-full bg-surface-container-high"></div>
+<span class="text-outline block truncate">Triage</span>
+</div>
+<div class="space-y-1">
+<div class="h-2 rounded-full bg-surface-container-high"></div>
+<span class="text-outline block truncate">2nd Life '26</span>
+</div>
+<div class="space-y-1">
+<div class="h-2 rounded-full bg-surface-container-high"></div>
+<span class="text-outline block truncate">Recycle</span>
+</div>
+</div>
+</div>
+<!-- Warranty Detailed Box -->
+<div class="p-space-md bg-surface-container-low rounded-xl space-y-space-xs text-xs">
+<div class="flex justify-between items-center">
+<span class="font-label-md text-on-surface font-semibold">OEM Battery Warranty Term:</span>
+<span class="font-telemetry-sm font-bold text-on-surface">36 Months / 150,000 km</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-outline">Remaining Time:</span>
+<span class="font-telemetry-sm text-on-surface">14 months remaining (Active)</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-outline">Contractual SoH Retention Floor:</span>
+<span class="font-telemetry-sm font-semibold text-on-surface">70.0% Minimum</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-outline">Current Pack State:</span>
+<span class="font-telemetry-sm font-bold text-error">71.2% (+1.2% above breach)</span>
+</div>
+<div class="pt-space-xs border-t-0 flex justify-between items-center text-error font-semibold">
+<span class="">Risk Classifier:</span>
+<span class="px-space-xs py-0.5 rounded bg-error-container text-on-error-container text-[11px]">HIGH WARRANTY CLAIM RISK</span>
+</div>
+</div>
+</div>
+<!-- Action Footer for Warranty Claim -->
+<div class="pt-space-xs flex justify-end">
+<button class="px-space-md py-space-xs rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-xs font-semibold flex items-center gap-space-xs transition-colors">
+<span class="material-symbols-outlined text-[16px]">assignment_turned_in</span>
+<span class="">Initiate OEM Warranty Dossier</span>
+</button>
+</div>
+</div>
+<!-- Right: Usage & Operational Stress Factors -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">electric_meter</span>
+</div>
+<h2 class="font-headline-sm text-sm font-bold text-on-surface">Operational Stress &amp; Duty Profile</h2>
+</div>
+<span class="font-telemetry-sm text-xs text-outline">Fleet Benchmark: High Abuse</span>
+</div>
+<!-- Key Stress Indicators -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-[10px] uppercase text-outline block">Energy Throughput</span>
+<span class="font-telemetry-md text-sm font-bold text-on-surface">42.8 MWh</span>
+<span class="text-[10px] font-telemetry-sm text-outline">Avg 37.5 kWh / cycle</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-[10px] uppercase text-outline block">Fast Charge Ratio</span>
+<span class="font-telemetry-md text-sm font-bold text-error">78% (342 sessions)</span>
+<span class="text-[10px] font-telemetry-sm text-error">High DC Exposure &gt; 1C</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-[10px] uppercase text-outline block">Swap Network Sessions</span>
+<span class="font-telemetry-md text-sm font-bold text-on-surface">86 Swaps</span>
+<span class="text-[10px] font-telemetry-sm text-outline">Across 4 Depot Stations</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-[10px] uppercase text-outline block">Thermal Excursions (&gt;45°C)</span>
+<span class="font-telemetry-md text-sm font-bold text-error">184 Hours</span>
+<span class="text-[10px] font-telemetry-sm text-error">Primary degradation driver</span>
+</div>
+</div>
+<!-- Cohort Comparison Strip -->
+<div class="p-space-sm rounded-lg bg-surface-container-low space-y-space-xs">
+<div class="flex justify-between items-center text-xs">
+<span class="text-outline font-label-md">Peer Cohort SoH Delta (NMC 2023 Batch)</span>
+<span class="font-telemetry-sm text-error font-bold">-15.0% below mean</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center justify-between text-[11px] font-telemetry-sm">
+<span class="text-outline">Cohort Average (86.2%):</span>
+<span class="text-on-surface font-semibold">86.2%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 86.2%"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex items-center justify-between text-[11px] font-telemetry-sm">
+<span class="text-error font-bold">BAT-8821 Current (71.2%):</span>
+<span class="text-error font-bold">71.2%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 71.2%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Operational Dispatch & Contingency Strip -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-space-md flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-error-container text-on-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">crisis_alert</span>
+</div>
+<div class="flex flex-col">
+<div class="font-headline-sm text-sm font-bold text-on-surface">Anomaly Diagnostic Confirmed: Accelerated Degradation &amp; C14 Imbalance</div>
+<div class="font-body-sm text-xs text-outline">Cell #14 internal impedance mismatch triggered automated quarantine flag. Deep cycle reconditioning required before redeployment.</div>
+</div>
+</div>
+<!-- Rapid Actions Group -->
+<div class="flex items-center gap-space-xs shrink-0 flex-wrap justify-end">
+<button class="px-space-md h-9 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface text-xs font-label-md font-semibold transition-colors flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px]">battery_saver</span>
+<span class="">Schedule Deep Balancing</span>
+</button>
+<button class="px-space-md h-9 rounded-lg bg-primary hover:bg-primary-container text-on-primary text-xs font-label-md font-semibold transition-colors flex items-center gap-space-xs shadow-sm">
+<span class="material-symbols-outlined text-[16px]">assignment_add</span>
+<span class="">Create Work Order</span>
+</button>
+<button class="px-space-md h-9 rounded-lg bg-error hover:bg-on-error-container text-on-error text-xs font-label-md font-semibold transition-colors flex items-center gap-space-xs shadow-sm">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span class="">Take Pack Offline</span>
+</button>
+</div>
+</div>
+</div></main></div>
+
+<script>
+  (function initSidebarToggle() {
+    const sidebar = document.getElementById('app-sidebar');
+    const mainLayout = document.getElementById('main-content-layout');
+    const toggleBtn = document.getElementById('sidebar-toggle-btn');
+    const toggleIcon = document.getElementById('sidebar-toggle-icon');
+
+    if (!sidebar || !mainLayout || !toggleBtn || !toggleIcon) return;
+
+    let isCollapsed = false;
+
+    toggleBtn.addEventListener('click', function () {
+      isCollapsed = !isCollapsed;
+
+      if (isCollapsed) {
+        sidebar.classList.remove('w-64');
+        sidebar.classList.add('w-16', 'collapsed');
+        mainLayout.classList.remove('pl-64');
+        mainLayout.classList.add('pl-16');
+        toggleIcon.textContent = 'keyboard_double_arrow_right';
+        toggleBtn.setAttribute('title', 'Expand sidebar');
+      } else {
+        sidebar.classList.remove('w-16', 'collapsed');
+        sidebar.classList.add('w-64');
+        mainLayout.classList.remove('pl-16');
+        mainLayout.classList.add('pl-64');
+        toggleIcon.textContent = 'keyboard_double_arrow_left';
+        toggleBtn.setAttribute('title', 'Collapse sidebar');
+      }
+    });
+  })();
+</script></body></html>

@@ -193,29 +193,219 @@ export const SUBSYSTEM_CARDS: SubsystemCard[] = [
 
 // --- Detail page: CAN oscilloscope ------------------------------------------
 
-/** Three CAN signals over the last 15 minutes, normalised for co-plotting. */
-export const CAN_WAVEFORMS = Array.from({ length: 61 }, (_, i) => {
-  const t = i / 60
-  return {
-    t: `14:${String(Math.floor(i / 4)).padStart(2, '0')}`,
-    busVoltage: 62 + 14 * Math.sin(t * 7.2) + 6 * Math.sin(t * 19),
-    motorRpm: 48 + 34 * Math.sin(t * 11.5 + 1.2) + 9 * Math.cos(t * 23),
-    torque: 38 + 16 * Math.sin(t * 5.1 + 2.4),
-  }
-})
+export type SignalAxis = 'left' | 'right'
 
-export const OSCILLOSCOPE_STATS = {
-  busVoltage: '392.4 V Bus',
-  motorRpm: '2,840 RPM',
-  torque: '64.5 Nm',
-  scale: 'Scale: 360V – 420V DC',
-  stability: 'Stability Index 99.8% (0 transient spikes)',
+export interface SignalSeries {
+  key: string
+  label: string
+  /** Literal hex — Recharts needs a colour value, not a Tailwind class. */
+  color: string
+  unit: string
+  axis: SignalAxis
+  render: 'area' | 'line'
+  dashed?: boolean
+  /** Latest value, shown as a legend chip above the plot. */
+  current: string
 }
 
-export const SIGNAL_QUALITY = [
-  { label: 'Ripple Voltage', value: '0.42 Vpp', caption: 'Within 1.5V tolerance' },
-  { label: 'Current Draw Peak', value: '112.4 A', caption: 'During ramp-up @ 14:08' },
-  { label: 'Harmonic Distortion', value: '2.1% THD', caption: 'Optimal class 1' },
+export interface SignalGroup {
+  id: string
+  label: string
+  icon: string
+  headline: string
+  description: string
+  left: { domain: [number, number]; unit: string }
+  right?: { domain: [number, number]; unit: string }
+  series: SignalSeries[]
+  scaleNote: string
+  qualityNote: string
+  /** The three summary tiles under the plot. */
+  stats: Array<{ label: string; value: string; caption: string }>
+}
+
+export interface SignalSample {
+  t: string
+  speedKmh: number
+  motorRpm: number
+  torqueNm: number
+  powerKw: number
+  dcBusV: number
+  phaseA: number
+  packTempC: number
+  motorTempC: number
+  coolantInC: number
+  ambientC: number
+  socPct: number
+  throttlePct: number
+  brakePct: number
+}
+
+/**
+ * One 15-minute drive cycle at 15s resolution, generated from a single speed
+ * profile so every trace is physically consistent with the others: torque
+ * follows acceleration, power follows torque x rpm, bus voltage sags under
+ * load, and current follows power. Deterministic — no Math.random.
+ */
+function buildSamples(): SignalSample[] {
+  const COUNT = 61
+  const out: SignalSample[] = []
+
+  const speedAt = (t: number) =>
+    Math.max(0, 27 + 15 * Math.sin(t * 6.1) + 6 * Math.sin(t * 17.3 + 0.6) + 3 * Math.cos(t * 29))
+
+  for (let i = 0; i < COUNT; i++) {
+    const t = i / (COUNT - 1)
+    const elapsedSec = i * 15
+    const mm = String(Math.floor(elapsedSec / 60)).padStart(2, '0')
+    const ss = String(elapsedSec % 60).padStart(2, '0')
+
+    const speedKmh = speedAt(t)
+    // Acceleration from the speed curve drives torque demand. The raw
+    // derivative is in normalised-time units and swings far wider than a real
+    // driveline, so it is scaled down and clamped to the motor's envelope.
+    const rawAccel = (speedAt(Math.min(1, t + 0.01)) - speedAt(Math.max(0, t - 0.01))) / 0.02
+    const accel = Math.max(-34, Math.min(52, rawAccel / 4.2))
+    const motorRpm = speedKmh * 92
+    const torqueNm = 30 + accel + 6 * Math.sin(t * 11.2)
+    const powerKw = (torqueNm * motorRpm) / 9550
+    // Pack sags under draw and recovers on regen.
+    const dcBusV = 392.4 - powerKw * 0.32 + 2.1 * Math.sin(t * 23)
+    const phaseA = Math.abs((powerKw * 1000) / (dcBusV * 1.732 * 0.95))
+
+    out.push({
+      t: `${mm}:${ss}`,
+      speedKmh: Number(speedKmh.toFixed(1)),
+      motorRpm: Math.round(motorRpm),
+      torqueNm: Number(torqueNm.toFixed(1)),
+      powerKw: Number(powerKw.toFixed(1)),
+      dcBusV: Number(dcBusV.toFixed(1)),
+      phaseA: Number(phaseA.toFixed(1)),
+      // Pack warms slowly under sustained draw; motor tracks it faster.
+      packTempC: Number((30.4 + t * 1.6 + 0.4 * Math.sin(t * 9)).toFixed(1)),
+      motorTempC: Number((44.8 + t * 4.2 + 1.8 * Math.sin(t * 6.4 + 1)).toFixed(1)),
+      coolantInC: Number((28.6 + t * 1.4 + 0.5 * Math.sin(t * 12)).toFixed(1)),
+      ambientC: Number((27.1 + 0.3 * Math.sin(t * 4)).toFixed(1)),
+      socPct: Number((72.9 - t * 0.9).toFixed(2)),
+      throttlePct: Number(Math.max(0, Math.min(100, 42 + accel * 2.6)).toFixed(0)),
+      brakePct: Number(Math.max(0, Math.min(100, -accel * 3.1)).toFixed(0)),
+    })
+  }
+  return out
+}
+
+export const SIGNAL_SAMPLES: SignalSample[] = buildSamples()
+
+/** Window label shown across the top of the plot. */
+export const SIGNAL_WINDOW = {
+  start: '14:00:00',
+  marks: ['14:03:45', '14:07:30', '14:11:15'],
+  end: '14:15:00 (NOW)',
+  resolution: '15s resolution · 61 samples · CAN 500 kbps',
+}
+
+export const SIGNAL_GROUPS: SignalGroup[] = [
+  {
+    id: 'powertrain',
+    label: 'Powertrain',
+    icon: 'settings_input_component',
+    headline: 'Motor Speed & Torque Delivery',
+    description: 'Rotor speed against commanded torque across the drive cycle.',
+    left: { domain: [0, 4800], unit: 'RPM' },
+    right: { domain: [-20, 100], unit: 'Nm' },
+    series: [
+      { key: 'motorRpm', label: 'Motor Speed', color: '#0037b0', unit: 'RPM', axis: 'left', render: 'area', current: '2,840 RPM' },
+      { key: 'torqueNm', label: 'Output Torque', color: '#004f35', unit: 'Nm', axis: 'right', render: 'line', current: '64.5 Nm' },
+    ],
+    scaleNote: 'Left 0–4,800 RPM · Right −20–100 Nm',
+    qualityNote: 'Stability Index 99.8% (0 transient spikes)',
+    stats: [
+      { label: 'Peak Rotor Speed', value: '3,182 RPM', caption: 'Within 4,500 RPM ceiling' },
+      { label: 'Torque Ripple', value: '2.4%', caption: 'Smooth commutation' },
+      { label: 'Regen Events', value: '11', caption: 'Negative torque intervals' },
+    ],
+  },
+  {
+    id: 'traction-power',
+    label: 'Traction Power',
+    icon: 'bolt',
+    headline: 'DC Bus & Phase Current',
+    description: 'Pack voltage sag against inverter phase current draw.',
+    left: { domain: [340, 420], unit: 'V' },
+    right: { domain: [0, 180], unit: 'A' },
+    series: [
+      { key: 'dcBusV', label: 'DC Bus Voltage', color: '#0037b0', unit: 'V', axis: 'left', render: 'area', current: '392.4 V' },
+      { key: 'phaseA', label: 'Phase Current', color: '#4b41e1', unit: 'A', axis: 'right', render: 'line', current: '112.4 A' },
+    ],
+    scaleNote: 'Left 340–420 V DC · Right 0–180 A RMS',
+    qualityNote: 'No under-voltage excursions below 355 V',
+    stats: [
+      { label: 'Ripple Voltage', value: '0.42 Vpp', caption: 'Within 1.5V tolerance' },
+      { label: 'Current Draw Peak', value: '112.4 A', caption: 'During ramp-up @ 14:08' },
+      { label: 'Harmonic Distortion', value: '2.1% THD', caption: 'Optimal class 1' },
+    ],
+  },
+  {
+    id: 'thermal',
+    label: 'Thermal',
+    icon: 'device_thermostat',
+    headline: 'Thermal Loop Profile',
+    description: 'Pack, motor and coolant temperatures against ambient.',
+    left: { domain: [20, 70], unit: '°C' },
+    series: [
+      { key: 'motorTempC', label: 'Motor', color: '#d97706', unit: '°C', axis: 'left', render: 'line', current: '48.0 °C' },
+      { key: 'packTempC', label: 'Battery Pack', color: '#0037b0', unit: '°C', axis: 'left', render: 'area', current: '31.4 °C' },
+      { key: 'coolantInC', label: 'Coolant Inlet', color: '#004f35', unit: '°C', axis: 'left', render: 'line', current: '29.5 °C' },
+      { key: 'ambientC', label: 'Ambient', color: '#747686', unit: '°C', axis: 'left', render: 'line', dashed: true, current: '27.1 °C' },
+    ],
+    scaleNote: 'All traces 20–70 °C · derating threshold 65 °C',
+    qualityNote: 'Peak motor temp 49.2 °C — 15.8 °C of headroom',
+    stats: [
+      { label: 'Pack Rise Rate', value: '+1.6 °C / 15m', caption: 'Nominal under continuous draw' },
+      { label: 'Coolant ΔT', value: '4.1 °C', caption: 'Inlet vs outlet across loop' },
+      { label: 'Derate Events', value: '0', caption: 'No thermal throttling applied' },
+    ],
+  },
+  {
+    id: 'energy-flow',
+    label: 'Energy Flow',
+    icon: 'autorenew',
+    headline: 'Traction Power & State of Charge',
+    description: 'Instantaneous power draw and recovery against pack depletion.',
+    left: { domain: [-40, 180], unit: 'kW' },
+    right: { domain: [70, 75], unit: '%' },
+    series: [
+      { key: 'powerKw', label: 'Traction Power', color: '#0037b0', unit: 'kW', axis: 'left', render: 'area', current: '48.2 kW' },
+      { key: 'socPct', label: 'State of Charge', color: '#004f35', unit: '%', axis: 'right', render: 'line', current: '72.0 %' },
+    ],
+    scaleNote: 'Left −40–180 kW (negative = regen) · Right 70–75% SoC',
+    qualityNote: 'Net 0.9% SoC consumed over the window',
+    stats: [
+      { label: 'Energy Drawn', value: '2.84 kWh', caption: 'Across the 15m window' },
+      { label: 'Regen Recovered', value: '0.52 kWh', caption: '18.3% recovery ratio' },
+      { label: 'Mean Draw', value: '11.4 kW', caption: 'Duty-cycle average' },
+    ],
+  },
+  {
+    id: 'driver-input',
+    label: 'Driver Input',
+    icon: 'sports_esports',
+    headline: 'Pedal Input & Road Speed',
+    description: 'Throttle and brake application against resulting road speed.',
+    left: { domain: [0, 100], unit: '%' },
+    right: { domain: [0, 60], unit: 'km/h' },
+    series: [
+      { key: 'throttlePct', label: 'Throttle', color: '#0037b0', unit: '%', axis: 'left', render: 'area', current: '42 %' },
+      { key: 'brakePct', label: 'Brake', color: '#e11d48', unit: '%', axis: 'left', render: 'line', current: '0 %' },
+      { key: 'speedKmh', label: 'Road Speed', color: '#004f35', unit: 'km/h', axis: 'right', render: 'line', current: '32.0 km/h' },
+    ],
+    scaleNote: 'Left 0–100% pedal · Right 0–60 km/h',
+    qualityNote: 'No simultaneous throttle and brake application detected',
+    stats: [
+      { label: 'Harsh Braking', value: '0 events', caption: 'Threshold >0.3g' },
+      { label: 'Throttle Smoothness', value: '94.1%', caption: 'Low-jerk application' },
+      { label: 'Coasting Ratio', value: '21.6%', caption: 'Pedal-off travel time' },
+    ],
+  },
 ]
 
 export const DIGITAL_TWIN = {

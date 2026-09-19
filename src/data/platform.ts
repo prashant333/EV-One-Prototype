@@ -18,11 +18,14 @@ export type SegmentId =
   | 'finance-leasing'
 
 export type ModuleId =
+  // --- Shared core ---
   | 'dashboard'
   | 'assets-registry'
   | 'live-tracking'
+  | 'reports-analytics'
+  | 'organization-settings'
+  // --- Cluster 1: Fleet & Mobility ---
   | 'vehicles-trips'
-  | 'battery'
   | 'operational-alerts'
   | 'maintenance'
   | 'geofences'
@@ -32,9 +35,21 @@ export type ModuleId =
   | 'vehicle-telemetry'
   | 'fota'
   | 'asset-intelligence'
-  | 'reports-analytics'
   | 'integrations-apis'
-  | 'organization-settings'
+  // --- Cluster 2: Asset Intelligence & Finance ---
+  | 'battery'
+  | 'battery-lifecycle'
+  | 'swap-stations'
+  | 'swap-sessions'
+  | 'asset-tracking'
+  | 'finance-leasing'
+  | 'asset-risk'
+  | 'collections-payments'
+  | 'asset-valuation'
+  | 'maintenance-warranty'
+  | 'predictive-degradation'
+  | 'oem-integrations'
+  | 'warranty-governance'
 
 export type NavGroup = 'core' | 'workspace' | 'intelligence' | 'system'
 
@@ -88,9 +103,9 @@ export const CLUSTERS: Cluster[] = [
   },
   {
     id: 'asset-finance',
-    name: 'Asset Intelligence & Finance',
+    name: 'Assets & Finance',
     tagline: 'Battery, swap network and asset risk',
-    available: false,
+    available: true,
     segments: ['battery-oem', 'swapping-station', 'finance-leasing'],
   },
 ]
@@ -309,29 +324,150 @@ export const MODULES: PlatformModule[] = [
     purpose: 'Firmware campaign rollout, cohort targeting, rollback and device version fleet-wide.',
   },
 
-  // --- Cluster 2 workspace modules (not shown in Fleet & Mobility) ---
+  /**
+   * --- Cluster 2 workspace modules: Assets & Finance ---
+   *
+   * The PRD does not publish a module matrix for Cluster 2 the way it does for
+   * Cluster 1 (page 4), so the gating below is a working proposal drawn from
+   * each segment's primary business question:
+   *
+   *   Module                   Battery OEM | Swapping Stn | Finance & Leasing
+   *   Battery Health               yes     |     yes      |       yes
+   *   Battery Lifecycle            yes     |     yes      |        -
+   *   Swap Stations                 -      |     yes      |        -
+   *   Swap Sessions                 -      |     yes      |        -
+   *   Asset Tracking               yes     |     yes      |       yes
+   *   Finance & Leasing             -      |      -       |       yes
+   *   Asset Risk                   yes     |      -       |       yes
+   *   Collections & Payments        -      |      -       |       yes
+   *   Asset Valuation              yes     |      -       |       yes
+   *   Maintenance & Warranty       yes     |     yes      |       yes
+   */
   {
-    // Battery belongs to Asset Intelligence & Finance, not Fleet & Mobility.
     id: 'battery',
-    name: 'Battery',
+    name: 'Battery Health',
     icon: 'battery_charging_full',
-    route: '/battery',
+    route: '/battery-health',
+    group: 'workspace',
+    segments: [BATTERY_OEM, SWAPPING, FINANCE],
+    designed: true,
+    purpose: 'Pack-level SoH, cell balance, thermal profile and degradation triage across the portfolio.',
+  },
+  {
+    id: 'battery-lifecycle',
+    name: 'Battery Lifecycle',
+    icon: 'recycling',
+    route: '/battery-lifecycle',
+    group: 'workspace',
+    // Financiers track residual value, not the physical second-life pipeline.
+    segments: [BATTERY_OEM, SWAPPING],
+    designed: false,
+    purpose: 'Commissioning, deployment phase, triage, second-life reassignment and recycling chain of custody.',
+  },
+  {
+    id: 'swap-stations',
+    name: 'Swap Stations',
+    icon: 'ev_station',
+    route: '/swap-stations',
+    group: 'workspace',
+    segments: [SWAPPING],
+    designed: false,
+    purpose: 'Station uptime, bay availability, robotic gripper state and inventory balance per site.',
+  },
+  {
+    id: 'swap-sessions',
+    name: 'Swap Sessions',
+    icon: 'swap_horiz',
+    route: '/swap-sessions',
+    group: 'workspace',
+    segments: [SWAPPING],
+    designed: false,
+    purpose: 'Individual swap transactions, dwell time, pack in/out pairing and revenue per session.',
+  },
+  {
+    id: 'asset-tracking',
+    name: 'Asset Tracking',
+    icon: 'my_location',
+    route: '/asset-tracking',
     group: 'workspace',
     segments: [BATTERY_OEM, SWAPPING, FINANCE],
     designed: false,
-    purpose: 'Pack-level SoC/SoH, thermal profile, cell deviation and degradation trend.',
+    purpose: 'Where every financed or deployed asset physically is, and who is currently accountable for it.',
+  },
+  {
+    id: 'finance-leasing',
+    name: 'Finance & Leasing',
+    icon: 'account_balance',
+    route: '/finance-leasing',
+    group: 'workspace',
+    segments: [FINANCE],
+    designed: false,
+    purpose: 'Loan and lease book, tenure, EMI schedule and per-asset exposure.',
+  },
+  {
+    id: 'asset-risk',
+    name: 'Asset Risk',
+    icon: 'warning',
+    route: '/asset-risk',
+    group: 'workspace',
+    // Warranty risk for the OEM, credit risk for the financier.
+    segments: [BATTERY_OEM, FINANCE],
+    designed: false,
+    purpose: 'Risk scoring across degradation, abnormal usage, theft signals and repayment behaviour.',
+  },
+  {
+    id: 'collections-payments',
+    name: 'Collections & Payments',
+    icon: 'payments',
+    route: '/collections-payments',
+    group: 'workspace',
+    segments: [FINANCE],
+    designed: false,
+    purpose: 'Due, overdue and settled instalments, with immobilisation escalation on default.',
+  },
+  {
+    id: 'asset-valuation',
+    name: 'Asset Valuation',
+    icon: 'trending_up',
+    route: '/asset-valuation',
+    group: 'workspace',
+    // Swap operators lease packs rather than carrying residual value on book.
+    segments: [BATTERY_OEM, FINANCE],
+    designed: false,
+    purpose: 'Residual value modelling from SoH, cycle count, age and secondary-market comparables.',
+  },
+  {
+    id: 'maintenance-warranty',
+    name: 'Maintenance & Warranty',
+    icon: 'build',
+    route: '/maintenance-warranty',
+    group: 'workspace',
+    segments: [BATTERY_OEM, SWAPPING, FINANCE],
+    designed: false,
+    purpose: 'Service history, warranty term tracking, claim dossiers and OEM credit recovery.',
   },
 
-  // --- Intelligence & analytics (shared core) ---
+  // --- Intelligence & analytics ---
   {
     id: 'asset-intelligence',
     name: 'Asset Intelligence',
     icon: 'insights',
     route: '/asset-intelligence',
     group: 'intelligence',
-    segments: null,
+    // Cluster 1's analytics layer; Cluster 2 gets Predictive Degradation.
+    segments: [FLEET, LAST_MILE, OEM],
     designed: false,
     purpose: 'Cross-module ML layer: residual value, predictive failure and utilisation modelling.',
+  },
+  {
+    id: 'predictive-degradation',
+    name: 'Predictive Degradation',
+    icon: 'query_stats',
+    route: '/predictive-degradation',
+    group: 'intelligence',
+    segments: [BATTERY_OEM, SWAPPING, FINANCE],
+    designed: false,
+    purpose: 'Wear-triage models projecting SoH trajectory, remaining useful life and failure probability.',
   },
   {
     id: 'reports-analytics',
@@ -344,16 +480,37 @@ export const MODULES: PlatformModule[] = [
     purpose: 'Scheduled reporting, custom cohort analysis and export to downstream BI.',
   },
 
-  // --- System & settings (shared core) ---
+  // --- System & settings ---
   {
     id: 'integrations-apis',
     name: 'Integrations & APIs',
     icon: 'hub',
     route: '/integrations-apis',
     group: 'system',
-    segments: null,
+    segments: [FLEET, LAST_MILE, OEM],
     designed: false,
     purpose: 'Device onboarding protocols, webhook subscriptions and partner API credentials.',
+  },
+  {
+    id: 'oem-integrations',
+    name: 'OEM Integrations & APIs',
+    icon: 'hub',
+    route: '/oem-integrations',
+    group: 'system',
+    segments: [BATTERY_OEM, SWAPPING, FINANCE],
+    designed: false,
+    purpose: 'BMS vendor connectors, OEM warranty endpoints and partner data-exchange credentials.',
+  },
+  {
+    id: 'warranty-governance',
+    name: 'Warranty Governance & Rules',
+    icon: 'gavel',
+    route: '/warranty-governance',
+    group: 'system',
+    // Policy owners: the OEM writing the terms, the financier relying on them.
+    segments: [BATTERY_OEM, FINANCE],
+    designed: false,
+    purpose: 'Warranty term templates, SoH retention floors, claim eligibility rules and escalation policy.',
   },
   {
     id: 'organization-settings',
