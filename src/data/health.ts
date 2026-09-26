@@ -184,7 +184,7 @@ export const SUBSYSTEM_CARDS: SubsystemCard[] = [
     stateTone: 'ok',
     rows: [
       { label: 'Regen Efficiency', value: '18.4%' },
-      { label: 'Peak Regen KW', value: '−18.6 kW' },
+      { label: 'Peak Regen KW', value: '18.6 kW' },
       { label: 'Brake Pad Life', value: '88% Est.' },
       { label: 'ABS/ESP Flags', value: 'All Clear' },
     ],

@@ -176,7 +176,7 @@ function TierDistributionPanel() {
         ))}
       </div>
 
-      <div className="mt-space-md flex items-center gap-space-md rounded-xl border border-outline-variant/40 bg-surface-container-low p-space-sm">
+      {/* <div className="mt-space-md flex items-center gap-space-md rounded-xl border border-outline-variant/40 bg-surface-container-low p-space-sm">
         <div className="min-w-0">
           <p className="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">
             Kinetic Recovery Efficiency Trend
@@ -198,7 +198,7 @@ function TierDistributionPanel() {
             </LineChart>
           </ResponsiveContainer>
         </div>
-      </div>
+      </div> */}
     </Panel>
   )
 }

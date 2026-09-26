@@ -62,7 +62,7 @@ export const ROSTER_SUMMARY = [
   {
     id: 'eco-efficiency',
     icon: 'bolt',
-    label: 'Fleet Eco-Efficiency',
+    label: 'Energy Per KM',
     value: '94.2',
     unit: 'Wh/km',
     caption: '-4.1% vs Target',

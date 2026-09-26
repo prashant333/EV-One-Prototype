@@ -199,8 +199,8 @@ export const ENERGY_KPIS: EnergyKpi[] = [
     caption: 'Grid-to-Pack conversion ratio',
     captionTone: 'ok',
     rows: [
-      { label: 'Inverter Loss', value: '4.8%' },
-      { label: 'HVAC Parasitic', value: '1.6%' },
+      { label: 'Electrical Loss', value: '6.4%' },
+      // { label: 'HVAC Parasitic', value: '1.6%' },
     ],
     progress: 93.6,
     progressTone: 'ok',

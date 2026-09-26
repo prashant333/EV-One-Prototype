@@ -82,7 +82,7 @@ function TelemetryOverlay({ vehicle, onClose }: { vehicle: Vehicle; onClose: () 
           <div className="min-w-0 flex-1">
             <p className="font-body-sm text-body-sm truncate font-semibold text-on-surface">{driver.name}</p>
             <p className="font-telemetry-sm text-telemetry-sm text-on-surface-variant">
-              ★ {driver.rating} · {driver.efficiencyPct}% Eff.
+              ★ {driver.rating} · {driver.efficiencyPct} wh/km.
             </p>
           </div>
           <Icon name="headset_mic" className="text-[18px] text-primary" />
@@ -705,9 +705,9 @@ function DiagnosticsManifest({ vehicles }: { vehicles: Vehicle[] }) {
       </div>
 
       <div className="font-body-sm text-body-sm flex items-center justify-between p-space-lg text-on-surface-variant">
-        <span>
+        {/* <span>
           Displaying 1 – {rows.length} of {vehicles.length.toLocaleString()} Active Assets
-        </span>
+        </span> */}
         <span className="flex items-center gap-space-sm">
           <button type="button" className="rounded-lg px-2 py-1 hover:bg-surface-container" disabled>
             Previous
@@ -771,7 +771,7 @@ export function DashboardPage() {
         <div className="flex flex-col gap-space-md xl:col-span-2">
           <LiveMapPanel vehicles={scopedVehicles} />
 
-          <div className="grid grid-cols-1 gap-space-md sm:grid-cols-3">
+          {/* <div className="grid grid-cols-1 gap-space-md sm:grid-cols-3">
             {[
               { icon: 'ev_station', label: 'Indiranagar Station', value: '18 Swaps / Hr' },
               { icon: 'local_shipping', label: 'Delivery SLA On-time', value: '97.8% On-Time' },
@@ -787,7 +787,7 @@ export function DashboardPage() {
                 </div>
               </Panel>
             ))}
-          </div>
+          </div> */}
 
           {/* Dropped entirely for Vehicle OEM — the PRD matrix withholds trips. */}
           {hasTrips && <ActiveTripsPanel />}

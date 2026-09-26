@@ -67,7 +67,7 @@ export const KPI_CATALOGUE: Kpi[] = [
   },
   {
     id: 'energy-efficiency',
-    label: 'Energy Efficiency',
+    label: 'Energy Per KM',
     icon: 'bolt',
     value: '94.2',
     badge: 'Wh/km',
@@ -137,7 +137,7 @@ export const KPI_CATALOGUE: Kpi[] = [
     value: '42.4m',
     badge: '↓ 3.8m avg',
     badgeTone: 'tertiary',
-    footLabel: 'Cycle: Dock-to-Hub',
+    footLabel: 'Cycle: Trip-to-Hub',
     footValue: 'Improving',
     footTone: 'tertiary',
     progress: 76,

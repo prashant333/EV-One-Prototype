@@ -253,7 +253,7 @@ function PortMixPanel() {
 
   return (
     <Panel>
-      <PanelHeader title="Port Architecture & Mix" action={<Icon name="dataset" className="text-[20px] text-primary" />} />
+      <PanelHeader title="Connector Architecture & Mix" action={<Icon name="dataset" className="text-[20px] text-primary" />} />
 
       <ul className="space-y-space-md">
         {PORT_MIX.map((p) => (
